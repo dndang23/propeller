@@ -2,18 +2,41 @@
   (:require [propeller.push.instructions :as instructions]
             [propeller.utils :as utils]))
 
+;Original function to create plushy
+;(defn make-random-plushy
+;  "Creates and returns a new plushy."
+;  [instructions max-initial-plushy-size]
+;  (repeatedly
+;    (rand-int max-initial-plushy-size)
+;    #(utils/random-instruction instructions)))
+
+(defn add-probability-to-plushy
+  [plushy]
+  (map #(conj [%] (rand)) plushy))
+
 (defn make-random-plushy
   "Creates and returns a new plushy."
   [instructions max-initial-plushy-size]
-  (repeatedly
-    (rand-int max-initial-plushy-size)
-    #(utils/random-instruction instructions)))
+  (let [plushy (repeatedly
+                 (rand-int max-initial-plushy-size)
+                 #(utils/random-instruction instructions))]
+    (add-probability-to-plushy plushy)))
+
+(make-random-plushy [1 2 "hi" "woah" true false 4] 5)
+
+(defn plushy-with-prob->plushy
+  [plushy-with-prob]
+  (println plushy-with-prob)
+  (filter identity (map (fn [[thing prob]] (if (< (rand) prob) thing nil)) plushy-with-prob)))
+
+(plushy-with-prob->plushy (make-random-plushy [1 2 "integer_add" "exec_if" true false 4] 5))
 
 (defn plushy->push
   "Returns the Push program expressed by the given plushy representation."
   ([plushy] (plushy->push plushy {}))
   ([plushy argmap]
-   (let [plushy (if (:diploid argmap) (map first (partition 2 plushy)) plushy)
+   (let [prob-plushy (plushy-with-prob->plushy plushy)
+         plushy (if (:diploid argmap) (map first (partition 2 prob-plushy)) prob-plushy)
          opener? #(and (vector? %) (= (first %) 'open))]    ;; [open <n>] marks opens
      (loop [push ()                                         ;; iteratively build the Push program from the plushy
             plushy (mapcat #(let [n (get instructions/opens %)]
@@ -40,3 +63,5 @@
                       (rest plushy))
                (recur push (rest plushy)))                  ;; unmatched close, ignore
              (recur (concat push [i]) (rest plushy))))))))) ;; anything else
+
+(plushy->push (make-random-plushy [1 2 "integer_add" "exec_if" true false 4] 10))
