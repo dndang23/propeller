@@ -1,6 +1,11 @@
 (ns propeller.variation
     (:require [propeller.selection :as selection]
-      [propeller.utils :as utils]))
+              [propeller.utils :as utils]
+              [propeller.genome :as genome]))
+
+;new mutation operator
+;probrabilistic plushy
+;mutation operator tweaking the probabilities
 
 (defn crossover
   "Crosses over two individuals using uniform crossover. Pads shorter one."
@@ -61,25 +66,70 @@
                      (map #(if (< (rand) 0.5) %1 %2)
                           shorter-padded
                           longer)))))
+;orginal uniform addition
+;(defn uniform-addition
+;  "Returns plushy with new instructions possibly added before or after each
+;  existing instruction."
+;  [plushy instructions umad-rate]
+;  (apply concat
+;         (map #(if (< (rand) umad-rate)
+;                 (shuffle [% (utils/random-instruction instructions)])
+;                 [%])
+;              plushy)))
 
-(defn uniform-addition
+;new uniform addition
+(defn prob_uniform-addition
   "Returns plushy with new instructions possibly added before or after each
   existing instruction."
   [plushy instructions umad-rate]
   (apply concat
          (map #(if (< (rand) umad-rate)
-                 (shuffle [% (utils/random-instruction instructions)])
-                 [%])
+                 (shuffle [[(first %) (last %)] [(utils/random-instruction instructions) (rand)]])
+                 [[(first %) (last %)]])
               plushy)))
 
-(defn uniform-replacement
+(prob_uniform-addition '(["integer_add" 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353]) ["hi" "hello" "sad"] 0.5)
+
+;original uniform replacement
+;(defn uniform-replacement
+;  "Returns plushy with new instructions possibly replacing existing
+;   instructions."
+;  [plushy instructions replacement-rate]
+;  (map #(if (< (rand) replacement-rate)
+;          [(utils/random-instruction instructions) (rand)]
+;          %)
+;       plushy))
+
+;new uniform replacement
+(defn prob-uniform-replacement
   "Returns plushy with new instructions possibly replacing existing
    instructions."
   [plushy instructions replacement-rate]
   (map #(if (< (rand) replacement-rate)
-          (utils/random-instruction instructions)
+          [(utils/random-instruction instructions) (rand)]
           %)
        plushy))
+
+(defn gaussian-noise-factor
+  "Returns gaussian noise of mean 0, std dev 1."
+  []
+  (*' (Math/sqrt (*' -2.0 (Math/log (rand))))
+      (Math/cos (*' 2.0 Math/PI (rand)))))
+
+(defn perturb-with-gaussian-noise
+  "Returns n perturbed with std dev sd."
+  [sd n]
+  (+' n (*' sd (gaussian-noise-factor))))
+
+;mutates the probabilities of plushy
+(defn prob-mutation
+  [plushy]
+  (map #(if (< (rand) 0.05)
+          [(first %) (perturb-with-gaussian-noise 0.01 (last %))]
+          %)
+       plushy))
+
+(prob-mutation '(["integer_add" 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353]))
 
 (defn diploid-uniform-silent-replacement
   "Returns plushy with new instructions possibly replacing existing
