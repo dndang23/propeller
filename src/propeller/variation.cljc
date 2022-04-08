@@ -1,7 +1,6 @@
 (ns propeller.variation
     (:require [propeller.selection :as selection]
-              [propeller.utils :as utils]
-              [propeller.genome :as genome]))
+              [propeller.utils :as utils]))
 
 ;new mutation operator
 ;probrabilistic plushy
@@ -66,39 +65,42 @@
                      (map #(if (< (rand) 0.5) %1 %2)
                           shorter-padded
                           longer)))))
-;orginal uniform addition
-;(defn uniform-addition
-;  "Returns plushy with new instructions possibly added before or after each
-;  existing instruction."
-;  [plushy instructions umad-rate]
-;  (apply concat
-;         (map #(if (< (rand) umad-rate)
-;                 (shuffle [% (utils/random-instruction instructions)])
-;                 [%])
-;              plushy)))
-
-;new uniform addition
-(defn prob_uniform-addition
+;original uniform addition
+(defn uniform-addition
   "Returns plushy with new instructions possibly added before or after each
   existing instruction."
   [plushy instructions umad-rate]
   (apply concat
          (map #(if (< (rand) umad-rate)
-                 (shuffle [[(first %) (last %)] [(utils/random-instruction instructions) (rand)]])
-                 [[(first %) (last %)]])
+                 (shuffle [% (utils/random-instruction instructions)])
+                 [%])
               plushy)))
 
-(prob_uniform-addition '(["integer_add" 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353]) ["hi" "hello" "sad"] 0.5)
+;new uniform addition
+(defn prob-uniform-addition
+  "Returns plushy with new instructions possibly added before or after each
+  existing instruction."
+  [plushy instructions umad-rate]
+  (apply concat
+         (map #(if (< (rand) umad-rate)
+                 (shuffle [%
+                           [(utils/random-instruction instructions) (rand)]])
+                 [%])
+              plushy)))
+
+(prob-uniform-addition '([:integer_add 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353])
+                       ["hi" "hello" "sad"]
+                       0.5)
 
 ;original uniform replacement
-;(defn uniform-replacement
-;  "Returns plushy with new instructions possibly replacing existing
-;   instructions."
-;  [plushy instructions replacement-rate]
-;  (map #(if (< (rand) replacement-rate)
-;          [(utils/random-instruction instructions) (rand)]
-;          %)
-;       plushy))
+(defn uniform-replacement
+  "Returns plushy with new instructions possibly replacing existing
+   instructions."
+  [plushy instructions replacement-rate]
+  (map #(if (< (rand) replacement-rate)
+          (utils/random-instruction instructions)
+          %)
+       plushy))
 
 ;new uniform replacement
 (defn prob-uniform-replacement
@@ -207,6 +209,14 @@
            (uniform-addition (:instructions argmap) (:umad-rate argmap))
            (uniform-deletion (:umad-rate argmap)))
        ;
+       :umad-prob
+       (-> (:plushy (selection/select-parent pop argmap))
+           (prob-uniform-addition (:instructions argmap) (:umad-rate argmap))
+           (uniform-deletion (:umad-rate argmap)))
+       ;
+       :mutation-prob
+       (-> (:plushy (selection/select-parent pop argmap))
+           (prob-mutation))
        :rumad
        (let [parent-genome (:plushy (selection/select-parent pop argmap))
              after-addition (uniform-addition parent-genome
