@@ -81,6 +81,7 @@
       :total-error #?(:clj  (apply +' errors)
                       :cljs (apply + errors)))))
 
+;Original variation {:umad 0.5 :crossover 0.5}
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
   [& args]
@@ -97,7 +98,7 @@
        :parent-selection        :lexicase
        :tournament-size         5
        :umad-rate               0.1
-       :variation               {:umad 0.5 :crossover 0.5}
+       :variation               {:umad-prob 0.5 :mutation-prob 0.5}
        :elitism                 false}
       (apply hash-map (map #(if (string? %) (read-string %) %) args))))
   (#?(:clj shutdown-agents)))

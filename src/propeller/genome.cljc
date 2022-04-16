@@ -26,7 +26,6 @@
 
 (defn plushy-with-prob->plushy
   [plushy-with-prob]
-  (println plushy-with-prob)
   (filter identity (map (fn [[thing prob]] (if (< (rand) prob) thing nil)) plushy-with-prob)))
 
 (plushy-with-prob->plushy (make-random-plushy [1 2 "integer_add" "exec_if" true false 4] 5))
