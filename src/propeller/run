@@ -1,0 +1,2 @@
+#! /bin/sh
+lein run -m propeller.problems.simple-regression :variation "{:umad 0.5 :crossover 0.5}"
