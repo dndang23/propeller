@@ -52,17 +52,19 @@
                                    population))
           best-individual (first evaluated-pop)]
       (if (:custom-report argmap)
-        ((:custom-report argmap) evaluated-pop generation argmap)
-        (report evaluated-pop generation argmap))
+        ((:custom-report argmap) evaluated-pop generation argmap))
+      ;(report evaluated-pop generation argmap))
       (cond
         ;; Success on training cases is verified on testing cases
         (<= (:total-error best-individual) solution-error-threshold)
-        (do (prn {:success-generation generation})
-            (prn {:total-test-error
-                  (:total-error (error-function argmap (:testing-data argmap) best-individual))})
-            (when (:simplification? argmap)
-              (let [simplified-plushy (simplification/auto-simplify-plushy (:plushy best-individual) error-function argmap)]
-                (prn {:total-test-error-simplified (:total-error (error-function argmap (:testing-data argmap) (hash-map :plushy simplified-plushy)))}))))
+        (do (println "completed")
+            {:success-generation generation})
+        ;(do (prn {:success-generation generation})
+        ;(prn {:total-test-error
+        ;      (:total-error (error-function argmap (:testing-data argmap) best-individual))})
+        ;(when (:simplification? argmap)
+        ;  (let [simplified-plushy (simplification/auto-simplify-plushy (:plushy best-individual) error-function argmap)]
+        ;    (prn {:total-test-error-simplified (:total-error (error-function argmap (:testing-data argmap) (hash-map :plushy simplified-plushy)))}))))
         ;;
         (>= generation max-generations)
         nil

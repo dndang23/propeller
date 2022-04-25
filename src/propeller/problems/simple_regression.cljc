@@ -63,20 +63,28 @@
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
   [& args]
-  (gp/gp
-    (merge
-      {:instructions             instructions
-       :error-function           error-function
-       :training-data            (:train train-and-test-data)
-       :testing-data             (:test train-and-test-data)
-       :max-generations          500
-       :population-size          500
-       :max-initial-plushy-size  100
-       :step-limit               200
-       :parent-selection         :lexicase
-       :tournament-size          5
-       :umad-rate                0.1
-       :variation                {:umad-prob 0.5 :mutation-prob 0.5}
-       :elitism                  false}
-      (apply hash-map (map #(if (string? %) (read-string %) %) args))))
-  (#?(:clj shutdown-agents)))
+  (loop [num_tries 0 num_successes 0 num_generations 0]
+    (if (= num_tries 5)
+      (do (prn {:percent_of_successes (float (/ num_successes num_tries))})
+          (prn {:average_num_generations (float (/ num_generations num_tries))})
+          (println ))
+      (let [output   (gp/gp
+                       (merge
+                         {:instructions             instructions
+                          :error-function           error-function
+                          :training-data            (:train train-and-test-data)
+                          :testing-data             (:test train-and-test-data)
+                          :max-generations          500
+                          :population-size          500
+                          :max-initial-plushy-size  100
+                          :step-limit               200
+                          :parent-selection         :lexicase
+                          :tournament-size          5
+                          :umad-rate                0.1
+                          :variation                {:umad-prob 0.5 :mutation-prob 0.5}
+                          :elitism                  false}
+                         (apply hash-map (map #(if (string? %) (read-string %) %) args))))
+            val  (if (nil? output)
+                   {:success-generation? 0 :num-generations 0}
+                   {:success-generation? 1 :num-generations (:success-generation output)})]
+        (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)))))))
