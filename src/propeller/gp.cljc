@@ -39,7 +39,8 @@
            mapper #?(:clj pmap :cljs map)}
     :as   argmap}]
   ;;
-  (prn {:starting-args (update (update argmap :error-function str) :instructions str)})
+  ;(prn {:starting-args (update (update argmap :error-function str) :instructions str)})
+  (println "Executing gp")
   (println)
   ;;
   (loop [generation 0
@@ -57,7 +58,8 @@
       (cond
         ;; Success on training cases is verified on testing cases
         (<= (:total-error best-individual) solution-error-threshold)
-        (do (println "completed")
+        (do (println "Completed run")
+            (println )
             {:success-generation generation})
         ;(do (prn {:success-generation generation})
         ;(prn {:total-test-error
