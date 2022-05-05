@@ -2,7 +2,7 @@
 universe    = vanilla 
 notification = error 
 notify_user  = dndang23@amherst.edu 
-initialdir  = /mnt/scratch/dndang23/COSC-452_final_project/propeller-master/src/propeller 
+initialdir  = /mnt/scratch/dndang23/propeller/src/propeller
 getenv = True
 executable  = middle_character_run
 
