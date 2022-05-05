@@ -1,2 +1,0 @@
-#! /bin/sh
-lein run -m propeller.problems.simple-regression :variation "{:umad-prob 0.5 :mutation-prob 0.5}"
