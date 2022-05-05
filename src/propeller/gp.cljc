@@ -42,6 +42,10 @@
   ;(prn {:starting-args (update (update argmap :error-function str) :instructions str)})
   (println "Executing gp")
   (println)
+
+  (prn {:starting-args (update (update argmap :error-function str) :instructions str)})
+  (println)
+
   ;;
   (loop [generation 0
          population (mapper

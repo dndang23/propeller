@@ -59,59 +59,16 @@
        :total-error #?(:clj  (apply +' errors)
                        :cljs (apply + errors))))))
 
-(def really-huge-number 99999999999999999999)
-
-(defn probability-of-success
-  "Koza's Y"
-  [success-generations number-of-runs i]
-  (let [succeeders (count (filter #(= % i) success-generations))]
-    (/ succeeders number-of-runs)))
-
-;success-generations =
-;number-of-runs =
-;M = ?
-;i = ?
-
-(defn cumulative-probability-of-success
-  "Koza's P"
-  [success-generations number-of-runs M i]
-  (if (< i 0)
-    0
-    (+ (probability-of-success success-generations number-of-runs i)
-       (cumulative-probability-of-success
-         success-generations number-of-runs M (dec i)))))
-
-(defn number-of-independent-runs-required
-  "Koza's R"
-  [success-generations number-of-runs M i z]
-  (let [cum-prob (cumulative-probability-of-success
-                   success-generations number-of-runs M i)]
-    (if (or (zero? cum-prob)
-            (zero? (- 1 cum-prob)))
-      really-huge-number
-      (Math/ceil (/ (Math/log (- 1 z))
-                    (Math/log (- 1 cum-prob)))))))
-
-(defn individuals-that-must-be-processed
-  [success-generations number-of-runs M i z]
-  (* M
-     (inc i)
-     (number-of-independent-runs-required
-       success-generations number-of-runs M i z)))
-
-(defn computational-effort
-  [success-generations number-of-runs M z G]
-  (apply min (map #(individuals-that-must-be-processed
-                     success-generations number-of-runs M % z)
-                  (range G))))
-
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
   [& args]
-  (loop [num_tries 0 num_successes 0 num_generations 0]
-    (if (= num_tries 3)
-      (do (prn {:percent_of_successes (float (/ num_successes num_tries))})
+
+  (loop [num_tries 0 num_successes 0 num_generations 0 generations_list []]
+    (if (= num_tries 12)
+      (do (println "Results of run")
+          (prn {:percent_of_successes (float (/ num_successes num_tries))})
           (prn {:average_num_generations (float (/ num_generations num_successes))})
+          (prn {:list_of_successful_generations generations_list})
           (println ))
       (do
         (println "Beginning run number" (inc num_tries))
@@ -129,15 +86,19 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            :variation                {:umad-prob 0.5 :mutation-prob 0.5}
+                            :variation                 {:umad 0.5 :crossover 0.5}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)
                      {:success-generation? 0 :num-generations 0}
-                     {:success-generation? 1 :num-generations (:success-generation output)})]
-          (println "Final output: ")
+                     {:success-generation? 1 :num-generations (:success-generation output)})
+              updated_list (if (nil? output)
+                             generations_list
+                             (conj generations_list (:success-generation output)))]
+          (println "Statistics based on current number of runs: ")
           (prn {:num_successes (+ num_successes (:success-generation? val))})
           (prn {:num_tries (inc num_tries)})
           (prn {:total_num_generations (+ num_generations (:num-generations val))})
+          (prn {:list_of_successful_generations updated_list})
           (println )
-          (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val))))))))
+          (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list))))))
