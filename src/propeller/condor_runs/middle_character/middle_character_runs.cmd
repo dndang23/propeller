@@ -7,13 +7,13 @@ getenv = True
 executable  = middle_character_run
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/middle_character/default/0/out
-error  = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/middle_character/default/0/err
-log    = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/middle_character/default/0/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/middle_character/default/0/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/middle_character/default/0/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/middle_character/default/0/log
 queue  
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/middle_character/default/1/out
-error  = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/middle_character/default/1/err
-log    = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/middle_character/default/1/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/middle_character/default/1/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/middle_character/default/1/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/middle_character/default/1/log
 queue

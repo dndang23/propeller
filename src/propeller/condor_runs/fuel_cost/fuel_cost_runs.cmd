@@ -7,13 +7,13 @@ getenv = True
 executable  = fuel_cost_run
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/fuel_cost/default/0/out
-error  = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/fuel_cost/default/0/err
-log    = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/fuel_cost/default/0/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/fuel_cost/default/0/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/fuel_cost/default/0/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/fuel_cost/default/0/log
 queue  
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/fuel_cost/default/1/out
-error  = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/fuel_cost/default/1/err
-log    = /home/dndang23/cluster-scratch/COSC-452_final_project/propeller-master/src/propeller/results/fuel_cost/default/1/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/fuel_cost/default/1/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/fuel_cost/default/1/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/fuel_cost/default/1/log
 queue
