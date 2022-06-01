@@ -43,7 +43,7 @@
   (println "Executing gp")
   (println)
 
-  (prn {:starting-args (update (update argmap :error-function str) :instructions str)})
+  ;(prn {:starting-args (update (update argmap :error-function str) :instructions str)})
   (println)
 
   ;;
@@ -63,7 +63,10 @@
         ;; Success on training cases is verified on testing cases
         (<= (:total-error best-individual) solution-error-threshold)
         (do (println "Completed run")
-            (println )
+            (println)
+            (println "The best individual according to the genetic program is:")
+            (println best-individual)
+            (println)
             {:success-generation generation})
         ;(do (prn {:success-generation generation})
         ;(prn {:total-test-error

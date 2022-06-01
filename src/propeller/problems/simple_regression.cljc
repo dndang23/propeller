@@ -65,11 +65,17 @@
 
   (loop [num_tries 0 num_successes 0 num_generations 0 generations_list []]
     (if (= num_tries 12)
-      (do (println "Results of run")
-          (prn {:percent_of_successes (float (/ num_successes num_tries))})
-          (prn {:average_num_generations (float (/ num_generations num_successes))})
-          (prn {:list_of_successful_generations generations_list})
-          (println ))
+      (if (= num_successes 0)
+        (do (println "Results of run")
+            (prn {:percent_of_successes (float (/ num_successes num_tries))})
+            (prn {:average_num_generations -1})
+            (prn {:list_of_successful_generations generations_list})
+            (println ))
+        (do (println "Results of run")
+            (prn {:percent_of_successes (float (/ num_successes num_tries))})
+            (prn {:average_num_generations (float (/ num_generations num_successes))})
+            (prn {:list_of_successful_generations generations_list})
+            (println )))
       (do
         (println "Beginning run number" (inc num_tries))
         (println )
@@ -86,7 +92,7 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            :variation                 {:umad 0.5 :crossover 0.5}
+                            :variation                 {:umad-prob 0.25 :mutation-prob 0.25 :crossover 0.5}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)

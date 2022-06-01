@@ -21,15 +21,6 @@
                  (rand-int max-initial-plushy-size)
                  #(utils/random-instruction instructions))
         prob-plushy (add-probability-to-plushy plushy)]
-    ;(println "--------------")
-    ;(println "plushy:")
-    ;(println plushy)
-    ;(println )
-    ;(println "prob-plushy:")
-    ;(println prob-plushy)
-    ;(println "--------------")
-    ;(println)
-
     prob-plushy))
 
 (make-random-plushy (list :in1
@@ -48,7 +39,7 @@
 
 (defn plushy-with-prob->plushy
   [plushy-with-prob]
-  (println plushy-with-prob)
+  ;(println plushy-with-prob)
   (filter identity (map (fn [[thing prob]]
                           (if (< (rand) prob)
                             thing
@@ -64,7 +55,6 @@
    (let [prob-plushy (plushy-with-prob->plushy plushy)
          plushy (if (:diploid argmap) (map first (partition 2 prob-plushy)) prob-plushy)
          opener? #(and (vector? %) (= (first %) 'open))]    ;; [open <n>] marks opens
-     ;(println prob-plushy)
      (loop [push ()                                         ;; iteratively build the Push program from the plushy
             plushy (mapcat #(let [n (get instructions/opens %)]
                               (if (and n
@@ -90,5 +80,3 @@
                       (rest plushy))
                (recur push (rest plushy)))                  ;; unmatched close, ignore
              (recur (concat push [i]) (rest plushy))))))))) ;; anything else
-
-(plushy->push (make-random-plushy [1 2 "integer_add" "exec_if" true false 4] 10))
