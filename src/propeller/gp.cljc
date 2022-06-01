@@ -36,7 +36,7 @@
     :or   {solution-error-threshold 0.0
            ;; The `mapper` will perform a `map`-like operation to apply a function to every individual
            ;; in the population. The default is `map` but other options include `mapv`, or `pmap`.
-           mapper #?(:clj pmap :cljs map)}
+           mapper #?(:clj map :cljs map)}
     :as   argmap}]
   ;;
   ;(prn {:starting-args (update (update argmap :error-function str) :instructions str)})

@@ -102,3 +102,6 @@
           (prn {:list_of_successful_generations updated_list})
           (println )
           (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list))))))
+
+;goal 1: run some tests on the probabilistic approach and see if it can solve the problem (print the final program)
+;goal 2: compare the performance with the standard approach

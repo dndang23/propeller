@@ -3,7 +3,7 @@
               [propeller.utils :as utils]))
 
 ;new mutation operator
-;probrabilistic plushy
+;probabilistic plushy
 ;mutation operator tweaking the probabilities
 
 (defn crossover

@@ -19,14 +19,41 @@
   [instructions max-initial-plushy-size]
   (let [plushy (repeatedly
                  (rand-int max-initial-plushy-size)
-                 #(utils/random-instruction instructions))]
-    (add-probability-to-plushy plushy)))
+                 #(utils/random-instruction instructions))
+        prob-plushy (add-probability-to-plushy plushy)]
+    ;(println "--------------")
+    ;(println "plushy:")
+    ;(println plushy)
+    ;(println )
+    ;(println "prob-plushy:")
+    ;(println prob-plushy)
+    ;(println "--------------")
+    ;(println)
 
-(make-random-plushy [1 2 "hi" "woah" true false 4] 5)
+    prob-plushy))
+
+(make-random-plushy (list :in1
+                          :integer_add
+                          :integer_subtract
+                          :integer_mult
+                          :integer_quot
+                          :integer_eq
+                          :exec_dup
+                          :exec_if
+                          'close
+                          0
+                          1)
+
+                    20)
 
 (defn plushy-with-prob->plushy
   [plushy-with-prob]
-  (filter identity (map (fn [[thing prob]] (if (< (rand) prob) thing nil)) plushy-with-prob)))
+  (println plushy-with-prob)
+  (filter identity (map (fn [[thing prob]]
+                          (if (< (rand) prob)
+                            thing
+                            nil))
+                        plushy-with-prob)))
 
 (plushy-with-prob->plushy (make-random-plushy [1 2 "integer_add" "exec_if" true false 4] 5))
 
@@ -37,6 +64,7 @@
    (let [prob-plushy (plushy-with-prob->plushy plushy)
          plushy (if (:diploid argmap) (map first (partition 2 prob-plushy)) prob-plushy)
          opener? #(and (vector? %) (= (first %) 'open))]    ;; [open <n>] marks opens
+     ;(println prob-plushy)
      (loop [push ()                                         ;; iteratively build the Push program from the plushy
             plushy (mapcat #(let [n (get instructions/opens %)]
                               (if (and n
