@@ -43,7 +43,8 @@
   (println "Executing gp")
   (println)
 
-  ;(prn {:starting-args (update (update argmap :error-function str) :instructions str)})
+  (println "Arguments used in genetic program:")
+  (prn {:starting-args (update (update argmap :error-function str) :instructions str)})
   (println)
 
   ;;
