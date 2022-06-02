@@ -92,7 +92,7 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            :variation                 {:umad-prob 0.25 :mutation-prob 0.25 :crossover 0.5}
+                            :variation                 {:umad-prob 0.5 :mutation-prob 0.5}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)
