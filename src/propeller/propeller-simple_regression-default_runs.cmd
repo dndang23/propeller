@@ -7,13 +7,13 @@ getenv = True
 executable  = run  
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/0/out 
-error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/0/err 
-log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/0/log 
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/0/out 
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/0/err 
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/0/log 
 queue  
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/1/out 
-error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/1/err 
-log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/1/log 
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/1/out 
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/1/err 
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/1/log 
 queue
