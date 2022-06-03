@@ -7,13 +7,13 @@ getenv = True
 executable  = simple_classification_run
 
 ## Job properties
-output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/default/0/out
-error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/default/0/err
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/prob/0/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/prob/0/err
 log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/prob/0/log
 queue
 
 ## Job properties
-output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/default/1/out
-error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/default/1/err
-log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/default/1/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/prob/1/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/prob/1/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_classification/prob/1/log
 queue
