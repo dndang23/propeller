@@ -657,3 +657,9 @@
 	   Disk (KB)            :     1           1    845472 
 	   Memory (MB)          :  2128           1      8075 
 ...
+009 (1976.000.000) 06/03 07:23:02 Job was aborted by the user.
+	via condor_rm (by user dndang23)
+...
+009 (1978.000.000) 06/03 07:23:04 Job was aborted by the user.
+	via condor_rm (by user dndang23)
+...

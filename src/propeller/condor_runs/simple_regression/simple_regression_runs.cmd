@@ -7,13 +7,13 @@ getenv = True
 executable  = simple_regression_run  
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/prob/0/out
-error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/prob/0/err
-log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/prob/0/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/default/0/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/default/0/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/default/0/log
 queue  
 
 ## Job properties 
-output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/prob/1/out
-error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/prob/1/err
-log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/prob/1/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/default/1/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/default/1/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/simple_regression/default/1/log
 queue
