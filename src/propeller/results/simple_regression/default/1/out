@@ -1,0 +1,221 @@
+Beginning run number 1
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (1 :integer_quot :in1 :integer_mult :integer_quot :exec_if :exec_dup :in1 :integer_mult :integer_quot close :integer_subtract 1 1 1 0 :integer_eq 1 :in1 :integer_add :integer_add :integer_add :integer_add :integer_eq :integer_eq :exec_if :exec_if :in1 :exec_if 0 :exec_if :integer_eq :exec_if :in1 :integer_mult :integer_mult 0 :integer_quot :integer_quot :integer_mult 1 :integer_eq :exec_if :integer_mult 1 :integer_mult :integer_eq :integer_subtract :exec_if :integer_subtract :integer_subtract :exec_if :integer_quot :exec_if :integer_quot :integer_subtract :integer_subtract :integer_eq), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 1}
+{:num_tries 1}
+{:total_num_generations 32}
+{:list_of_successful_generations [32]}
+
+Beginning run number 2
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_subtract close 0 :integer_eq :in1 1 0 0 :integer_subtract :integer_add :exec_dup :exec_dup :exec_dup 0 :exec_if :integer_eq :integer_subtract :exec_dup :integer_eq 1 :exec_dup :integer_quot :in1 :exec_dup :exec_dup :integer_add 1 close :integer_add :integer_subtract :integer_mult :exec_if :integer_quot :integer_add :integer_quot 0 1 :integer_subtract :integer_eq :in1 :in1 :integer_mult :in1 :integer_mult :integer_mult :integer_quot 1 :integer_add), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 2}
+{:num_tries 2}
+{:total_num_generations 61}
+{:list_of_successful_generations [32 29]}
+
+Beginning run number 3
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:in1 :exec_dup close :exec_if :integer_mult :integer_add close :in1 :integer_mult :integer_eq :integer_mult :exec_if 1 0 :integer_subtract close :integer_add :in1 :integer_mult :integer_subtract :integer_eq :integer_subtract :integer_quot close :integer_mult :integer_eq :integer_add 1 1 close :integer_add :exec_if :integer_add :integer_eq :integer_mult 1 :integer_add :integer_mult), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 3}
+{:num_tries 3}
+{:total_num_generations 65}
+{:list_of_successful_generations [32 29 4]}
+
+Beginning run number 4
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:in1 :exec_dup :integer_add :in1 :integer_mult :integer_quot :integer_quot close :in1 1 :integer_subtract :integer_add :exec_dup :integer_mult :exec_if :integer_mult 1 1 :integer_add :integer_add :integer_eq :integer_eq), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 4}
+{:num_tries 4}
+{:total_num_generations 81}
+{:list_of_successful_generations [32 29 4 16]}
+
+Beginning run number 5
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_quot :integer_eq :exec_dup 0 :integer_mult :integer_add :integer_add close :in1 :exec_if :in1 :integer_mult :exec_dup :integer_add close :integer_mult 0 1 :integer_mult 1 close close :integer_subtract :integer_subtract :integer_quot :integer_mult :integer_add :integer_mult :integer_add :integer_add :in1 :exec_dup :exec_if :integer_mult :exec_dup :integer_add 1 :integer_add :exec_dup :exec_if :exec_if :exec_if :integer_subtract :exec_if :integer_quot :exec_if :integer_subtract :integer_subtract :integer_add :integer_mult :integer_subtract :integer_mult :integer_subtract :integer_add), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 5}
+{:num_tries 5}
+{:total_num_generations 89}
+{:list_of_successful_generations [32 29 4 16 8]}
+
+Beginning run number 6
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_subtract :integer_add :in1 :in1 close :integer_mult close 1 :integer_add :in1 :integer_mult 0 :in1 :integer_eq 1 :exec_dup close :exec_dup :exec_dup :integer_quot :integer_quot :exec_dup :exec_dup :integer_add close :exec_dup :exec_if :integer_mult 1 :exec_dup :exec_dup :integer_add :integer_add :exec_if :exec_dup :integer_mult close), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 6}
+{:num_tries 6}
+{:total_num_generations 99}
+{:list_of_successful_generations [32 29 4 16 8 10]}
+
+Beginning run number 7
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_mult :exec_dup :integer_quot :in1 :exec_if :integer_eq 1 :integer_mult :integer_eq :integer_add :integer_eq :integer_add :integer_eq :integer_quot :integer_subtract :exec_dup :exec_dup :in1 :exec_dup :integer_quot :integer_add :integer_mult :exec_dup 1 :exec_if :integer_quot :exec_dup :exec_if 1 :integer_add :in1 :in1 :integer_mult :integer_add :in1 :integer_mult :integer_add 1 :integer_add :exec_dup :exec_if close :exec_if 1 0 1 :integer_add :integer_add 0), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 7}
+{:num_tries 7}
+{:total_num_generations 122}
+{:list_of_successful_generations [32 29 4 16 8 10 23]}
+
+Beginning run number 8
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_subtract :integer_add 1 close close :integer_mult close 1 1 :in1 :in1 close :integer_mult close :in1 :integer_mult :integer_add :integer_add close :integer_add :integer_mult :integer_mult 0 :in1 1 :in1 1 :integer_eq :in1 :integer_mult close :in1 :integer_eq :exec_if close :integer_mult :integer_eq close :exec_dup :integer_add close :exec_dup :exec_if), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 8}
+{:num_tries 8}
+{:total_num_generations 127}
+{:list_of_successful_generations [32 29 4 16 8 10 23 5]}
+
+Beginning run number 9
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_mult :integer_eq 1 :exec_if :integer_quot 1 :integer_add :integer_subtract :integer_add :integer_add :integer_quot :in1 :integer_quot :integer_quot :integer_add :integer_eq :integer_subtract :exec_if :exec_if :exec_dup :in1 :in1 :integer_subtract :integer_quot :integer_add :integer_mult close :integer_subtract 1 :exec_if :integer_add :exec_if 1 :integer_mult :integer_quot :integer_quot :integer_mult :integer_mult :integer_mult :integer_quot :in1 :in1 :integer_mult 1 :exec_if :integer_subtract :in1 :integer_mult :integer_add close :integer_subtract :exec_if :in1 :in1 :integer_add 1 :integer_add :integer_add :exec_if), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 9}
+{:num_tries 9}
+{:total_num_generations 143}
+{:list_of_successful_generations [32 29 4 16 8 10 23 5 16]}
+
+Beginning run number 10
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (0 :integer_subtract :in1 :in1 :integer_quot :integer_add close :integer_quot :exec_dup :integer_mult close close :integer_eq 1 1 :integer_add :integer_add 1 :in1 :exec_dup :in1 :integer_mult :integer_add), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 10}
+{:num_tries 10}
+{:total_num_generations 153}
+{:list_of_successful_generations [32 29 4 16 8 10 23 5 16 10]}
+
+Beginning run number 11
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_eq :in1 :exec_dup 1 :integer_quot :in1 close :integer_mult 1 :integer_add :integer_mult :integer_mult 1 :exec_dup :exec_dup :integer_subtract 1 :integer_add), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 11}
+{:num_tries 11}
+{:total_num_generations 171}
+{:list_of_successful_generations [32 29 4 16 8 10 23 5 16 10 18]}
+
+Beginning run number 12
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 [-10], :output1 [-1007]} {:input1 [-9], :output1 [-735]} {:input1 [-8], :output1 [-517]} {:input1 [-7], :output1 [-347]} {:input1 [-6], :output1 [-219]} {:input1 [-5], :output1 [-127]} {:input1 [-4], :output1 [-65]} {:input1 [-3], :output1 [-27]} {:input1 [-2], :output1 [-7]} {:input1 [-1], :output1 [1]} {:input1 [0], :output1 [3]} {:input1 [1], :output1 [5]} {:input1 [2], :output1 [13]} {:input1 [3], :output1 [33]} {:input1 [4], :output1 [71]} {:input1 [5], :output1 [133]} {:input1 [6], :output1 [225]} {:input1 [7], :output1 [353]} {:input1 [8], :output1 [523]} {:input1 [9], :output1 [741]} {:input1 [10], :output1 [1013]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if close 0 1)", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 [-20], :output1 [-8017]} {:input1 [-19], :output1 [-6875]} {:input1 [-18], :output1 [-5847]} {:input1 [-17], :output1 [-4927]} {:input1 [-16], :output1 [-4109]} {:input1 [-15], :output1 [-3387]} {:input1 [-14], :output1 [-2755]} {:input1 [-13], :output1 [-2207]} {:input1 [-12], :output1 [-1737]} {:input1 [-11], :output1 [-1339]} {:input1 [11], :output1 [1345]} {:input1 [12], :output1 [1743]} {:input1 [13], :output1 [2213]} {:input1 [14], :output1 [2761]} {:input1 [15], :output1 [3393]} {:input1 [16], :output1 [4115]} {:input1 [17], :output1 [4933]} {:input1 [18], :output1 [5853]} {:input1 [19], :output1 [6881]} {:input1 [20], :output1 [8023]}), :step-limit 200, :error-function "propeller.problems.simple_regression$error_function@7e74a380", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_eq :integer_eq 1 0 :integer_mult :integer_eq :integer_mult 0 :integer_add :integer_add :exec_if 1 :in1 :integer_add :integer_eq :integer_quot :in1 :integer_quot :integer_quot :exec_dup :integer_add :integer_eq :in1 :integer_mult :in1 :integer_eq :integer_quot :integer_eq close :exec_dup :integer_mult :in1 :integer_eq :integer_mult :exec_dup :integer_eq :in1 :integer_mult close :exec_if :integer_subtract :in1 :integer_add :exec_dup :integer_subtract :exec_dup :exec_dup :integer_mult :integer_subtract :integer_mult 1 :exec_dup :integer_add :integer_subtract :integer_eq 1 :integer_quot :integer_mult :integer_eq close 1 :in1 :exec_dup :integer_eq 1 :integer_quot :integer_mult :integer_quot close :exec_if :integer_subtract), :behaviors (-1007 -735 -517 -347 -219 -127 -65 -27 -7 1 3 5 13 33 71 133 225 353 523 741 1013), :errors (0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 12}
+{:num_tries 12}
+{:total_num_generations 541}
+{:list_of_successful_generations [32 29 4 16 8 10 23 5 16 10 18 370]}
+
+Results of run
+{:percent_of_successes 1.0}
+{:average_num_generations 45.083332}
+{:list_of_successful_generations [32 29 4 16 8 10 23 5 16 10 18 370]}
+

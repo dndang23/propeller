@@ -3,14 +3,14 @@ Beginning run number 1
 Executing gp
 
 Arguments used in genetic program:
-{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
 
 Completed run
 
-The best individual according to the genetic program is:
-{:plushy ([:string_concat 0.03658945927305279] [:string_reverse 0.4535088959928284] [C 0.6267811786605698] [:boolean_not 0.43504746900900315] [:exec_if 0.10492747513342371] [T 0.8398939676346092] [:string_contains 0.2229859444889042] [:string_contains 0.5685407341298675] [:string_contains 0.3830449553987466] [:in1 0.6020478159335557] [:string_contains 0.9757398397675605] [:integer_subtract 0.823693755133925] [ 0.9939613798197419] [:integer_add 0.27164538093478074] [G 0.6854902617483316] [close 0.7892174532919211] [:exec_dup 0.2944819292940234] [1 0.01183089662369663] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.29802141781137736] [:string_length 0.9872646520067946] [:integer_eq 0.08062420011174143] [:string_eq 0.6957711087427187] [:exec_dup 0.1137993075567505] [:string_drop 0.4685015039409218] [:string_length 0.3737192407273756] [:integer_add 0.11775456775918136] [1 0.6886323970961852] [1 0.23398448310077147] [C 0.7567606055131249] [:boolean_and 0.9873198347386885] [:integer_eq 0.809772475198607] [:string_length 0.23247058577615043] [:string_reverse 0.9581146563324654] [:string_eq 0.26412079916118136] [:boolean_not 0.5809950523692399] [:boolean_or 0.13588824795518906] [1 0.20099410755480618] [:boolean_and 0.6422148217521847] [1 0.8933615940266927] [:string_eq 0.39354940483256373]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+The best individual according to the genetic program:
+{:plushy (:boolean_or :integer_quot :string_length close :string_reverse :integer_add T :string_drop :integer_add :string_concat :integer_add :string_drop 1 :string_reverse :boolean_eq :integer_quot true :boolean_and ABCDEFGHIJKLMNOPQRSTUVWXYZ T :in1 0 :boolean_eq :exec_dup :string_contains :exec_dup :integer_mult :string_eq :integer_mult :boolean_not  :in1 :string_concat :integer_eq :exec_if A close :exec_dup :boolean_and true :boolean_eq 0 false :exec_if :string_reverse :integer_eq :string_drop C C :boolean_or T :string_take :boolean_or :string_drop :boolean_eq :integer_mult :integer_subtract :integer_mult true :string_length :integer_subtract false :string_eq :string_reverse :integer_quot false :integer_subtract :boolean_eq :boolean_not :string_take :string_reverse C :integer_eq :integer_add false :boolean_or :string_drop :integer_subtract  :integer_add :string_drop :boolean_eq), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
 
-Statistics based on current number of runs: 
+Statistics based on current number of runs:
 {:num_successes 1}
 {:num_tries 1}
 {:total_num_generations 0}
@@ -21,14 +21,14 @@ Beginning run number 2
 Executing gp
 
 Arguments used in genetic program:
-{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
 
 Completed run
 
-The best individual according to the genetic program is:
-{:plushy ([false 0.3020672047184799] [:exec_if 0.8501263339606457] [:string_concat 0.8207742414852714] [:string_eq 0.9130213926262815] [:integer_mult 0.8665484678995176] [:in1 0.3032235058865401] [:string_contains 0.5256365066536406] [:integer_subtract 0.06604249052399613] [false 0.8835852137827791] [:string_eq 0.3806115646770992] [:integer_add 0.5306969782747994] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.8941803039631958] [:string_contains 0.626334705029402] [T 0.8594570300096714] [:boolean_and 0.8994078195432522] [:integer_subtract 0.8785038235395183] [G 0.8467435116944945] [0 0.21764213484492578] [0 0.8034354380791384] [:integer_add 0.9976732069698292] [:string_concat 0.5943913254728337] [:integer_add 0.4193742740299694] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.7757738251997648] [:integer_mult 0.0644836383760432] [:integer_add 0.4773220071566264] [:string_drop 0.14790200960240973] [:string_take 0.04700401214841787] [:integer_add 0.9901521810929234] [ 0.8603144541646293] [false 0.4546671657401742] [:integer_mult 0.11689072499004582] [ 0.34850952583548334] [:integer_eq 0.3329603506162534] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.9358245250594323] [:in1 0.7222967170337922] [true 0.5507347527644567] [:boolean_and 0.21057979740584254] [:integer_mult 0.5324121841211685] [:string_contains 0.4649336000699441] [close 0.2234986268677872] [:integer_subtract 0.8554197952264114] [:integer_mult 0.8795568140716209] [:string_drop 0.5587579507214726] [true 0.009356476394198898] [:exec_if 0.22374498673127752] [:boolean_eq 0.8029502136151238] [:boolean_not 0.4468600108722769] [0 0.9779591487265529] [:string_take 0.25634342018660605] [:integer_add 0.07743459454079249] [true 0.42148117488135073] [:boolean_and 0.15012632078922172] [G 0.5356349986622846] [1 0.9228858823432635] [T 0.8583362422696582] [:boolean_and 0.29405391460635943] [:integer_mult 0.031983760701682074] [G 0.9166858583075944] [:string_take 0.2477047136875864] [T 0.15390294178689035] [:boolean_or 0.7549791674559903] [false 0.04992533397873056] [:string_length 0.869794842839801] [:integer_quot 0.6157444093905927] [:in1 0.7123664305880703] [:exec_if 0.5460823898577336] [:integer_add 0.720673297149693] [ 0.004311147508363811] [:boolean_eq 0.7599685501059776] [:string_contains 0.7962710737859454] [:string_length 0.14759218489202108] [:boolean_and 0.7362340560847361] [A 0.7003585507991384] [:boolean_not 0.344257645457119]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+The best individual according to the genetic program:
+{:plushy (:string_concat :boolean_eq close :exec_dup :boolean_and :exec_dup :string_drop :boolean_not :string_eq :string_take :string_contains :string_drop :boolean_and close :integer_quot :in1 true :integer_quot :integer_add :string_contains :boolean_eq A :in1 C :string_eq ABCDEFGHIJKLMNOPQRSTUVWXYZ  :boolean_or :boolean_or :string_concat :string_concat T :string_drop :string_drop :boolean_and :integer_mult :boolean_eq A A :exec_if :string_length :integer_subtract :integer_eq  :integer_eq :string_take ABCDEFGHIJKLMNOPQRSTUVWXYZ :string_length ABCDEFGHIJKLMNOPQRSTUVWXYZ  :integer_eq :integer_mult :boolean_or :exec_dup :in1 A  :exec_if T 1 ABCDEFGHIJKLMNOPQRSTUVWXYZ :string_eq :string_eq :integer_eq :string_eq :boolean_or :boolean_not 1 1 A :boolean_and 0 :string_eq T  :integer_quot :boolean_eq :boolean_or :exec_dup :integer_eq false  1 close T T  :boolean_eq :boolean_not :string_length :integer_add :boolean_not C T), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
 
-Statistics based on current number of runs: 
+Statistics based on current number of runs:
 {:num_successes 2}
 {:num_tries 2}
 {:total_num_generations 0}
@@ -39,5 +39,183 @@ Beginning run number 3
 Executing gp
 
 Arguments used in genetic program:
-{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:string_eq ABCDEFGHIJKLMNOPQRSTUVWXYZ :string_length :integer_eq :boolean_not :integer_mult :integer_add T :boolean_not G :boolean_or :in1 1 0 ABCDEFGHIJKLMNOPQRSTUVWXYZ :exec_dup :boolean_and :string_length :in1 :string_contains :integer_subtract :exec_dup :integer_add :integer_quot), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 3}
+{:num_tries 3}
+{:total_num_generations 1}
+{:list_of_successful_generations [0 0 1]}
+
+Beginning run number 4
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_subtract :string_reverse A  :exec_if :integer_mult T :string_contains :integer_mult G T :exec_dup T  :string_length :boolean_and :exec_if T C  1 :boolean_eq :string_contains true :integer_quot :integer_quot :string_contains :in1 :integer_mult :string_contains G :boolean_and :boolean_and G :in1 :integer_subtract true), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 4}
+{:num_tries 4}
+{:total_num_generations 1}
+{:list_of_successful_generations [0 0 1 0]}
+
+Beginning run number 5
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:integer_quot :integer_subtract :exec_if 0 1 true T :in1 :integer_eq :string_contains G G :integer_mult :exec_if :string_concat :exec_dup A A :string_drop :integer_eq :string_contains :string_length :integer_subtract G :string_reverse :integer_subtract :string_reverse C A :boolean_not C :string_length :exec_if :string_take :string_drop close :boolean_or :string_length  :exec_dup :string_reverse close :integer_mult A close :boolean_and true :boolean_and 1 0 :boolean_not close T :exec_dup false :boolean_and false :string_concat true :boolean_or :string_concat true :string_contains), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 5}
+{:num_tries 5}
+{:total_num_generations 1}
+{:list_of_successful_generations [0 0 1 0 0]}
+
+Beginning run number 6
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (C T :integer_subtract :in1 :string_contains :string_length T :string_contains :exec_dup), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 6}
+{:num_tries 6}
+{:total_num_generations 1}
+{:list_of_successful_generations [0 0 1 0 0 0]}
+
+Beginning run number 7
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (true :integer_eq 1 ABCDEFGHIJKLMNOPQRSTUVWXYZ close :string_eq  :exec_if :integer_add :exec_dup :integer_subtract :boolean_eq :integer_subtract :boolean_or  :boolean_eq :exec_dup A :integer_subtract :boolean_eq :integer_add :in1  G :boolean_eq :in1 C G :string_take A :string_length :integer_subtract :boolean_not :string_length :integer_subtract 1 G :integer_add A T close :in1 :boolean_not false :boolean_and :exec_if :integer_quot :string_concat C :string_concat :in1 :boolean_and ABCDEFGHIJKLMNOPQRSTUVWXYZ :string_eq :boolean_not :integer_mult :integer_subtract close true :string_reverse :boolean_or :string_contains T), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 7}
+{:num_tries 7}
+{:total_num_generations 2}
+{:list_of_successful_generations [0 0 1 0 0 0 1]}
+
+Beginning run number 8
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (G :string_drop :integer_mult :string_reverse :string_length 1 :exec_dup C ABCDEFGHIJKLMNOPQRSTUVWXYZ :exec_dup :string_length :string_reverse C :in1 :boolean_not :exec_dup ABCDEFGHIJKLMNOPQRSTUVWXYZ A :integer_quot :in1 :boolean_eq ABCDEFGHIJKLMNOPQRSTUVWXYZ :string_take :string_reverse :exec_if :boolean_and :exec_dup ABCDEFGHIJKLMNOPQRSTUVWXYZ :integer_add T :boolean_eq true :integer_eq :integer_eq :boolean_eq :boolean_and :in1 :boolean_eq :string_contains T 1 :string_drop :string_concat C :in1 :boolean_or A T :boolean_or :string_eq 0 :integer_quot  :integer_quot T :integer_eq T false  :boolean_eq 1 :boolean_and :string_contains), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 8}
+{:num_tries 8}
+{:total_num_generations 2}
+{:list_of_successful_generations [0 0 1 0 0 0 1 0]}
+
+Beginning run number 9
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:exec_if T A :string_reverse 1 :string_take :boolean_not :string_eq :string_concat :integer_mult :string_drop :integer_eq 1 false ABCDEFGHIJKLMNOPQRSTUVWXYZ :boolean_not :exec_dup :exec_dup :boolean_eq true :integer_subtract :integer_subtract :string_reverse :in1 :in1 :string_drop :boolean_eq false :exec_dup :string_contains :in1 :boolean_or :string_contains ABCDEFGHIJKLMNOPQRSTUVWXYZ :integer_eq A T C 0 A close :string_eq :string_drop 0  close :integer_eq :string_contains :integer_eq C C), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 9}
+{:num_tries 9}
+{:total_num_generations 4}
+{:list_of_successful_generations [0 0 1 0 0 0 1 0 2]}
+
+Beginning run number 10
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:string_drop :string_eq :exec_if :string_reverse :boolean_not C T :string_length :in1 :integer_eq  :string_contains :string_reverse false :boolean_not :integer_subtract :boolean_and :string_length  :in1 :string_eq close G C T :in1 :string_contains :integer_quot T false :integer_mult :exec_if :string_contains :string_eq close :integer_subtract :string_drop G :string_drop), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 10}
+{:num_tries 10}
+{:total_num_generations 4}
+{:list_of_successful_generations [0 0 1 0 0 0 1 0 2 0]}
+
+Beginning run number 11
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:exec_dup T true :string_take :integer_subtract A :integer_add :string_take :string_take :string_take 1 :boolean_not 0 :integer_add :integer_subtract :string_length :boolean_or close :boolean_not :boolean_or :exec_if close :boolean_eq :boolean_and :boolean_or G  close :exec_if G T :integer_eq true :boolean_or :in1 :string_contains), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 11}
+{:num_tries 11}
+{:total_num_generations 6}
+{:list_of_successful_generations [0 0 1 0 0 0 1 0 2 0 2]}
+
+Beginning run number 12
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@3ee0b4f7", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program:
+{:plushy (:boolean_not :exec_dup C  :in1 :boolean_and :boolean_eq T :integer_add :integer_quot true :integer_quot :in1 :string_contains false 1 ABCDEFGHIJKLMNOPQRSTUVWXYZ :integer_add :exec_if false :in1 :string_contains :boolean_eq false :integer_subtract :boolean_not :string_eq :string_take :string_concat A :string_contains :in1 1 :integer_add :exec_if :integer_subtract :string_eq), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs:
+{:num_successes 12}
+{:num_tries 12}
+{:total_num_generations 6}
+{:list_of_successful_generations [0 0 1 0 0 0 1 0 2 0 2 0]}
+
+Results of run
+{:percent_of_successes 1.0}
+{:average_num_generations 0.5}
+{:list_of_successful_generations [0 0 1 0 0 0 1 0 2 0 2 0]}
 
