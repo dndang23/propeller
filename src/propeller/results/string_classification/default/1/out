@@ -1,0 +1,7 @@
+Beginning run number 1
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+

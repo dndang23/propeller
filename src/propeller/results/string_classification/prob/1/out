@@ -1,0 +1,221 @@
+Beginning run number 1
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:integer_quot 0.8794089920365358] [:string_length 0.6559911246915545] [:boolean_or 0.03370649105169188] [:integer_quot 0.8703622294766078] [:integer_add 0.052256554806336175] [:string_length 0.5582567145752324] [:integer_mult 0.5020587881322406] [:string_take 0.3171145583501144] [C 0.4322477784245582] [0 0.15432450376997298] [T 0.1367009833245295] [A 0.8028909502615377] [T 0.5817657183515997] [:integer_mult 0.761666961812566] [:in1 0.4117126100952969] [G 0.5561821208127639] [:integer_add 0.8697733382761751] [T 0.18464899952737213] [:integer_subtract 0.5755448503840843] [:boolean_eq 0.3135747346323827] [1 0.15846064185805064] [:string_take 0.570290452359923] [:in1 0.8996360201034722] [false 0.7817745250381363] [:integer_add 0.027761259855816456] [false 0.5008955488910769] [T 0.25528655919243326] [true 0.8975163857885268] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.7447392811823927] [:in1 0.562044052417761] [true 0.5368292572260392] [:boolean_eq 0.9466101248767025] [ 0.736604700073002] [:boolean_not 0.7621345306027165] [:string_length 0.4852636371476001] [:boolean_not 0.35044083708306806] [:integer_quot 0.09662407361398895] [:string_eq 0.7861151422440015] [T 0.2214059607233343] [:integer_eq 0.64406345543951] [:string_contains 0.6414503542500327] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.1412326232882024] [:string_contains 0.2712389101794477] [:integer_eq 0.8546012070072961] [true 0.24640406439317486] [:string_take 0.7965758063093488] [:integer_add 0.05852857994019156] [close 0.14197778306047448]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 1}
+{:num_tries 1}
+{:total_num_generations 0}
+{:list_of_successful_generations [0]}
+
+Beginning run number 2
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:integer_add 0.7070967515188634] [1 0.497738619674154] [:integer_subtract 0.7207390085616061] [:exec_dup 0.9694177391473977] [1 0.8852586197192033] [:boolean_eq 0.21749641817014753] [:string_length 0.42147680464876836] [:string_eq 0.7958195692780886] [:string_reverse 0.9547720338632539] [:integer_eq 0.25830451966237644] [:integer_mult 0.047189931737291024] [T 0.21507673259038662] [:integer_quot 0.8655031021004136] [ 0.5375718889778957] [:string_length 0.41469284483678526] [:integer_mult 0.16089146383660036] [:string_eq 0.016709583866064692] [T 0.9993158505757143] [:integer_mult 0.4988731675097109] [:integer_quot 0.19466244283245504] [:string_concat 0.2625915225148584] [:string_contains 0.5432645128555346] [false 0.028279201896422856] [:string_drop 0.5162432974554434] [G 0.4528882857214964] [:integer_subtract 0.8043361656743634] [T 0.9581460133574893] [:boolean_and 0.022084204112682748] [:boolean_and 0.31562092277149445] [:integer_eq 0.8203071903864947] [:integer_eq 0.7436808707648147] [:in1 0.6385094932996583] [G 0.2752102220684287] [:integer_add 0.12254976321975908] [false 0.8569373994393346] [:string_contains 0.5143295154267951] [:boolean_and 0.30408538624849646]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 2}
+{:num_tries 2}
+{:total_num_generations 0}
+{:list_of_successful_generations [0 0]}
+
+Beginning run number 3
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:integer_quot 0.2736330364083367] [:boolean_eq 0.9241456399220342] [:string_concat 0.8308695976584297] [G 0.9354905801243372] [:boolean_eq 0.9227803776475879] [true 0.9890917794319427] [C 0.6599686059081609] [:string_take 0.9982624947732051] [:integer_eq 0.20122173685274336] [:exec_if 0.7782624491193606] [T 0.41163008091664366] [:integer_eq 0.6986738552512558] [:boolean_eq 0.8213511358146486] [:integer_eq 0.9153711472523285] [:integer_add 0.05092969360561439] [:exec_dup 0.4831133972147621] [:string_eq 0.35915509236604226] [:string_contains 0.4146086570303338] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.24850770383697773] [false 0.36870865439666467] [1 0.7533912854990451] [0 0.7647008362279566] [0 0.6190078683313399] [:integer_quot 0.3613513191334281] [:integer_eq 0.6447301697139973] [:integer_eq 0.5726788559324515] [:string_concat 0.9653574446271822] [:boolean_or 0.36603719311539773] [A 0.5362742095041872] [:string_reverse 0.5849581182285462] [A 0.9932135263364035] [:string_contains 0.026745600557677607] [false 0.9023776548843448] [:exec_if 0.8847679685437463] [C 0.0897831861001126] [:boolean_or 0.023904154794860744] [:boolean_eq 0.7369470132668352] [:integer_mult 0.515168968828057] [T 0.609858400616518] [:boolean_or 0.41705497739294983] [:boolean_not 0.6154104842257578] [A 0.6958402075820723] [0 0.6792886705810762] [:integer_eq 0.6486583430826717] [0 0.14630253888202205] [:integer_add 0.18951426774029212] [:integer_quot 0.8122479503066771] [1 0.8220405307488137] [ 0.7089174255826419] [:boolean_and 0.2303830370389215] [:boolean_not 0.6435346293184327] [:integer_quot 0.8323128804417504] [:in1 0.6127431301709757] [:string_contains 0.7519923803599017] [:string_eq 0.8007764988491644] [false 0.863658837921596] [T 0.27239557007928905] [:string_length 0.4460896324883118] [0 0.3837954593864338] [G 0.6697072573696304] [G 0.6685300368024036] [true 0.4465824838593243] [A 0.679519032228368] [:integer_quot 0.925778974158599] [G 0.26071519229272366] [1 0.16421386301722563] [:integer_quot 0.6207094953468222] [:integer_eq 0.7826153899102406] [:integer_quot 0.632512349202796] [:exec_if 0.9977520364420193] [:exec_dup 0.09541322956441123] [:integer_mult 0.5607673309797054] [:boolean_and 0.48201099162182937] [false 0.3164411654382704]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 3}
+{:num_tries 3}
+{:total_num_generations 0}
+{:list_of_successful_generations [0 0 0]}
+
+Beginning run number 4
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:string_contains 0.7435598227779507] [:string_concat 0.5701252142304953] [false 0.02343367741643898] [:in1 0.09167804641572974] [:string_length 0.10473987854156774] [:integer_add 0.10473679979541128] [:string_contains 0.7571195949609723] [:string_concat 0.5443375098463828] [close 0.4276766209082007] [ 0.9078355064848005] [:string_length 0.8141205805993309] [:string_length 0.4974582974380998] [G 0.5057547324489463] [G 0.4625431558322093] [:exec_if 0.07850219755614463] [close 0.7301695706908581] [:string_length 0.8342978814366023] [:string_take 0.32161531035471846] [true 0.5029859428370413] [T 0.6589395585326625] [G 0.07932599419682784] [1 0.9434786592389898] [:integer_eq 0.1043217140375533] [:integer_eq 0.20933406797564535] [0 0.2790953579764659] [:exec_if 0.05158546254216889] [:boolean_not 0.9280627650300247] [:integer_mult 0.18526796653159372] [:string_concat 0.6244033943058214] [:integer_eq 0.11424019025775878] [T 0.8669911528696652] [:boolean_or 0.22830399301356652] [:string_take 0.322950916319382] [C 0.6090786233729009] [:integer_eq 0.46473257673107393] [:string_length 0.06308706481289772] [0 0.0801601085833975] [false 0.19006581397625422] [:boolean_and 0.8849861819202388] [:boolean_and 0.14843952995884435] [false 0.337861986935155] [:boolean_and 0.34014727933368494] [:integer_quot 0.2919344155009942] [A 0.6119845064167253] [close 0.709936434046291] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.9086450237290732] [:string_contains 0.5722810980597987] [:in1 0.11481448724889753] [:string_drop 0.3791392554383092] [:boolean_or 0.24018296193689848] [:string_eq 0.04847648344950728] [C 0.3681917907225686] [:integer_mult 0.1571250319569778] [A 0.10102893293319659] [A 0.7381754038857715] [:string_contains 0.7124661914038547] [:in1 0.22140532281134662] [:string_reverse 0.4264193801879834] [1 0.9172641470948207] [C 0.028096202590214947] [:string_drop 0.7378185903849928] [:string_reverse 0.5867957224844208] [:boolean_eq 0.2696355045089719] [C 0.8362334728507841] [:integer_quot 0.38876529226611345] [1 0.6634681089814056] [0 0.26000772398111005] [:integer_eq 0.48008998179528883] [:exec_dup 0.5486209255811844] [:string_eq 0.32265200351007683] [:string_length 0.1989146497673555] [0 0.6117662448777161] [:integer_add 0.7985876862987024] [:string_length 0.8184482609492127] [ 0.9242187409591495] [:boolean_and 0.9229572798346104] [0 0.42976898634238003] [:boolean_not 0.1825707795368614] [:string_concat 0.6897639285386518] [:boolean_and 0.2522969432953367] [:in1 0.3138571764901834] [:string_length 0.8024101509184738] [:exec_if 0.952770242463111] [:boolean_eq 0.3082892832825189] [:string_take 0.08857697511578655] [:in1 0.7831887240293174] [false 0.5177580402188755] [:string_drop 0.6985617954053474] [:integer_mult 0.6328719716588237] [:string_concat 0.7507341250438696] [:string_drop 0.16547267595119053] [:string_take 0.4166536822789926] [:string_contains 0.8398137625567216]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 4}
+{:num_tries 4}
+{:total_num_generations 1}
+{:list_of_successful_generations [0 0 0 1]}
+
+Beginning run number 5
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:boolean_or 0.7356747213701169] [:string_eq 0.6417349277914017] [1 0.6321560944711285] [ 0.5568036901164779] [:string_length 0.9282473512193951] [:boolean_or 0.7480193084972563] [:integer_add 0.34720583964603957] [:in1 0.2324589711456213] [:string_length 0.09618789359345292] [1 0.6659579735168099] [ 0.9369403121101074] [:integer_eq 0.23407146329599005] [:string_contains 0.6831747298587013] [T 0.9570996778318134] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.46355827615052714] [:string_drop 0.661571933998102] [1 0.059470983970483116] [ 0.617507387830961] [close 0.5223125873111736] [close 0.2735929460526495] [close 0.1890260990147702] [close 0.6811638466461779] [:integer_quot 0.09960680105546815] [:boolean_eq 0.2712996035857186] [:exec_if 0.2526239903490375] [:string_take 0.5209625291762324] [:string_drop 0.813225432954847] [0 0.4028406800401547] [:string_eq 0.134306487188113] [false 0.7581986033720811] [C 0.41586207403695497] [:in1 0.1810342173036139] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.11655851762909009] [:in1 0.7925919995833848] [:string_length 0.36336557668136704] [:exec_dup 0.28522574867405026] [:string_contains 0.32893263369244363] [:in1 0.1954870309787452] [:string_drop 0.23762719473672866] [A 0.3136001425528111] [close 0.19824605927868744] [:exec_dup 0.31927293404922996] [T 0.7859884265985341] [:string_eq 0.011713771565461717] [T 0.6579330176383749] [false 0.621542991227275] [:string_drop 0.7479256117441158] [:string_concat 0.7035333415954306] [:string_length 0.5197094175806827] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.06858448040821397] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.03537632683052416] [A 0.38189823963675784] [:integer_eq 0.7447627089977983] [:integer_quot 0.5210600970352663] [ 0.7350171204592779] [:string_concat 0.03863080194231994] [:exec_if 0.6914860139495655] [true 0.08507056204099017] [:integer_add 0.23151954946665465] [:string_concat 0.09828033447802631] [:boolean_not 0.6446203531684053] [0 0.9699167693888758] [0 0.9362726302492806] [G 0.8178224267168253] [:exec_if 0.4861424503371393] [:string_concat 0.7213502879571146] [true 0.787488525876143] [false 0.4644436608214192] [T 0.9765634499167343] [1 0.0040004442238499305] [:in1 0.816736623397669] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.3646077633452214] [:string_reverse 0.5785182107758362] [G 0.7023013697494234] [:boolean_and 0.09221352655202097] [:string_reverse 0.8541653968128626] [1 0.830838868726737] [:integer_eq 0.6822390771316418] [:string_drop 0.49898668881666064] [:boolean_or 0.25098867895973076] [:string_concat 0.3320442236397686] [:string_length 0.5592564743978895] [true 0.9842290324191127] [:integer_eq 0.8946036857556185] [:boolean_eq 0.008753206199648922] [:string_contains 0.6426898266366253] [:integer_subtract 0.8153375145106484] [:in1 0.7126683178611581] [:boolean_or 0.10840225114516855] [C 0.6132412887511796] [T 0.14269123793825977]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 5}
+{:num_tries 5}
+{:total_num_generations 2}
+{:list_of_successful_generations [0 0 0 1 1]}
+
+Beginning run number 6
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([false 0.3982333494364464] [0 0.2795577580850319] [C 0.6418637112549856] [:integer_eq 0.25334568241058053] [:integer_quot 0.6748310869779213] [:integer_add 0.32884674455100127] [:integer_quot 0.6248376462163706] [:integer_quot 0.9853024523559002] [:boolean_and 0.9500079455476279] [:integer_add 0.9455045016567418] [:integer_mult 0.5913166656580334] [true 0.15562120238949062] [1 0.7821592595476108] [:string_drop 0.4670540845807626] [:string_eq 0.6419845743975021] [:integer_mult 0.25445338038860665] [close 0.05717796657035523] [:exec_dup 0.45294139341440487] [:integer_quot 0.43025329807254376] [:string_eq 0.21031970267873457] [:integer_subtract 0.08463840395533984] [:string_length 0.5392639736684046] [0 0.35805470834856] [:exec_dup 0.6423098503212725] [:string_drop 0.3482053929191863] [:integer_eq 0.45025070911767673] [close 0.520080551360292] [:boolean_eq 0.9532219990936851] [:boolean_not 0.808919771022569] [false 0.0634341987544561] [A 0.805376043618116] [:string_take 0.5888064140167559] [A 0.1727069115605987] [:string_drop 0.8365909036282494] [:integer_mult 0.6872619959344184] [:string_take 0.9337861257287007] [:string_length 0.5148998198583788] [:integer_add 0.03440685243520092] [:boolean_not 0.32338140433649365] [:in1 0.6795848658961534] [false 0.10476401548952574] [:string_reverse 0.041459462530548] [G 0.6472365209119643] [:exec_if 0.0817006245941223] [C 0.1919564934267204] [:exec_dup 0.6154889102793066] [G 0.16090232154591233] [:string_contains 0.3264207948554817] [true 0.9045463213355538] [:string_contains 0.2210650242973714] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.13567351167184682] [false 0.24708284205977982] [:string_eq 0.26467027696738876] [:string_length 0.5886390990630309] [:string_concat 0.8932213729077274] [:boolean_eq 0.8693420483441646] [:boolean_eq 0.6530913174346153] [0 0.36760214412681447] [:boolean_eq 0.7744081890214283] [:integer_add 0.7229160288457596] [:integer_eq 0.8478739091202955] [:exec_dup 0.18435429480253707] [:boolean_and 0.3062264373351491] [T 0.5340329668133661] [G 0.025084935619039794] [G 0.5775228640636391] [:exec_dup 0.9494008038012862] [:in1 0.8083190440264753] [:string_concat 0.8408744703162903] [:exec_if 0.16234936373938957] [:exec_if 0.6500109029704003] [:string_contains 0.9281177885315044] [false 0.9144861367100567] [:integer_subtract 0.974898378575042] [:exec_dup 0.22806360800049996] [:string_length 0.7212421096115066] [G 0.7006915469207535] [:string_concat 0.2641243631605963]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 6}
+{:num_tries 6}
+{:total_num_generations 2}
+{:list_of_successful_generations [0 0 0 1 1 0]}
+
+Beginning run number 7
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:exec_if 0.147169450506626] [:exec_dup 0.7498410797556198] [:string_drop 0.44251004206940203] [:boolean_and 0.03680519923146086] [:string_contains 0.9236005206577751] [T 0.38915559744542816] [T 0.24092578595653114] [:boolean_or 0.7895227164160763] [:boolean_or 0.3194373533207767] [:string_concat 0.050181726859830134] [G 0.8052849310924739] [T 0.9744570590394358] [:integer_add 0.705975749811245] [:integer_quot 0.34299606601303345] [:integer_mult 0.7079766398779053] [G 0.75361127075136] [:integer_eq 0.1783129321037451] [:boolean_not 0.20197653631193135] [:string_length 0.005952819446246371] [close 0.4156544303645435] [1 0.7334537007068705] [ 0.5272101095564153] [:in1 0.9700747734366886] [false 0.8663047480930621]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 7}
+{:num_tries 7}
+{:total_num_generations 3}
+{:list_of_successful_generations [0 0 0 1 1 0 1]}
+
+Beginning run number 8
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:exec_dup 0.45303803434707524] [C 0.8309922861910741] [:string_reverse 0.6665961391067128] [G 0.5211965485394371] [:string_reverse 0.9994269848271969] [T 0.8148258029578925] [:boolean_or 0.9623031735888369] [:integer_add 0.4529259544582064] [:integer_subtract 0.7736824979253553] [:string_drop 0.8128932734313995] [:string_eq 0.5599484014084707] [:string_take 0.4261397676695212] [0 0.9799121582068052] [:string_take 0.08430529676603393] [C 0.6333255452353459] [:integer_subtract 0.4430228182799216] [A 0.8996403243303113] [1 0.5346415571559303] [:string_drop 0.7817668114631501] [:string_take 0.9845114857465865] [:exec_dup 0.4675122993843718] [:integer_mult 0.017748617493090646] [:string_take 0.4704773357234757] [:boolean_or 0.9325311413206357] [false 0.6585875423930126] [:string_reverse 0.598990792112735] [:string_contains 0.24264840899411444] [T 0.5761085974466374] [:in1 0.8842132200860108] [:integer_quot 0.5885179470098135] [:string_drop 0.7309073577575604] [:integer_quot 0.6959574366787821] [:string_concat 0.12178924988753315] [:string_drop 0.454870866065857] [:exec_if 0.3833563739521689] [A 0.5082676679419268] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 8.063524233438146E-4] [1 0.2497533232857745] [:string_concat 0.17589856386275315] [:integer_subtract 0.753313829384893] [:string_contains 0.5333590527439498] [:string_reverse 0.9140572037752951] [:string_eq 0.40774441681743556] [ 0.43812803559163405] [:integer_quot 0.6119060886128034] [:in1 0.793235557697056] [:string_take 0.9709372747094234] [1 0.6848678787365182] [:string_contains 0.8003702585336756] [false 0.866875580110849] [:string_take 0.24743180961469968] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.797641601242042] [true 0.3167410837008955] [true 0.5928316441228734] [:boolean_not 0.018704780513153718]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 8}
+{:num_tries 8}
+{:total_num_generations 3}
+{:list_of_successful_generations [0 0 0 1 1 0 1 0]}
+
+Beginning run number 9
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([T 0.6231018419407556] [:integer_mult 0.7523391660939001] [true 0.5236989882899907] [:integer_quot 0.5870631406524005] [:integer_add 0.1308302174970375] [:integer_quot 0.04678237113200445] [0 0.9370313437688927] [:integer_quot 0.9093737511778696] [T 0.054473840227256876] [close 0.8752945708583167] [0 0.06632452554413115] [A 0.09975425487329259] [ 0.8245595317192858] [C 0.19299859582989198] [:exec_dup 0.6304447877937779] [:string_reverse 0.738247847201242] [:integer_add 0.7297029943461979] [:boolean_and 0.8514886737240174] [:string_length 0.11458681789099645] [:boolean_eq 0.20623469734121702] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.09049004301172892] [:boolean_not 0.383797695072132] [:string_concat 0.13554840283528669] [:integer_eq 0.9841847615228901] [:boolean_and 0.0674797610346165] [T 0.9774646466960205] [:string_reverse 0.10163415729028669] [:string_drop 0.60771003018715] [:string_take 0.8161896861762503] [:string_eq 0.3331808142328725] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.4723335651870795] [:string_length 0.833399444330979] [:string_take 0.31618084777457045] [:string_concat 0.8066898421645344] [:boolean_eq 0.021551552103404537] [:string_concat 0.8754897940970636] [:string_reverse 0.034368546205228] [false 0.40056141025033243] [:exec_dup 0.32555244817735973] [:in1 0.8527465654655645] [:boolean_eq 0.6344422973789885] [:string_contains 0.8101534488821982] [C 0.23291062546721475] [0 0.8319986025903604] [:string_eq 0.21478620706839935] [:integer_mult 0.8345236663505876] [:boolean_eq 0.3286451620720011] [:in1 0.07059119831954774] [:string_eq 0.046549386251963254] [:boolean_eq 0.03824616351022747] [:string_eq 0.3783470233241093] [A 0.24459227893044344] [:string_concat 0.4915227236032379] [:string_length 0.5940340940461974] [ 0.43049134391387234] [:integer_subtract 0.6029064859531645] [A 0.7062374031477852] [:in1 0.7487651086957519] [:string_drop 0.6662597798436096] [ 0.1095229977179305] [:string_contains 0.884207359701592] [G 0.33695085163562966] [:exec_if 0.21608031907068959] [:integer_add 0.7269420745212293] [:boolean_not 0.1524964998097954] [:exec_if 0.2158881711410776] [:boolean_not 0.010725720789197424] [:boolean_or 0.05339700951211901] [T 0.8217983754432769] [:exec_if 0.4156739263467386] [:integer_quot 0.3021933490414078] [:integer_eq 0.5548071475411269] [true 0.49097495598483876] [:string_concat 0.18496125139748354] [:boolean_eq 0.775723091795284] [0 0.6294689477841162] [G 0.5275078946106586] [ 0.9697803889752887] [:exec_if 0.17919205004057803] [:in1 0.7093118684525139] [:string_contains 0.6845741917554249] [:string_contains 0.687942233765834] [close 0.11975800619807253] [:exec_if 0.5361161847885298] [C 0.0734656493249829] [C 0.4554881438332603] [close 0.12000626594268482] [:string_reverse 0.6544105956101439] [:string_eq 0.3868294748046086] [:string_reverse 0.18434541390577786] [:string_take 0.18698735549283974] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.034837064293781306]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 9}
+{:num_tries 9}
+{:total_num_generations 3}
+{:list_of_successful_generations [0 0 0 1 1 0 1 0 0]}
+
+Beginning run number 10
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:string_reverse 0.40502242574142056] [:string_take 0.39687658224988387] [close 0.9523362402289844] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.3427987611150215] [:string_take 0.7542064079443217] [:boolean_not 0.2813324779640024] [:string_contains 0.5697268855934229] [:string_length 0.9428102720941257] [0 0.07676838930952135] [:boolean_and 0.7075949102756721] [:boolean_not 0.7304201669269854] [:integer_quot 0.4395683199932764] [:string_contains 0.1203470087993469] [:string_reverse 0.013278108533645416] [:integer_quot 0.4825811649860434] [A 0.502259836742354] [ 0.7000588129464667] [:string_concat 0.9398277130947505] [:string_length 0.6525984262662049] [:string_reverse 0.9492348481894861] [T 0.5855686434059238] [:boolean_and 0.32555502457120444] [:string_concat 0.5511570686012878] [:exec_if 0.7793111509808629] [:integer_quot 0.3402445995792205] [close 0.6985322411932187] [:in1 0.42911037284487397] [:string_take 0.6126909795151739] [true 0.6856091297528841] [:boolean_or 0.4443678837643452] [:exec_dup 0.14552238495037195] [:string_contains 0.9923863131666232] [:boolean_or 0.4223058912158342] [T 0.017824879324554233] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.9526354007753115] [0 0.9003708587865558] [C 0.6155595978739521] [:string_eq 0.9299414137107929] [:exec_if 0.4636503753871456] [:string_eq 0.7147460807971336] [:exec_if 0.6486138731234746] [:integer_add 0.9737578482293233] [:boolean_or 0.7490901337393354] [:string_take 0.6750299046900939] [:string_contains 0.8618902653864239] [:boolean_eq 0.3519498179589947] [ 0.10614873892801846] [:integer_add 0.7322462833584118] [:string_length 0.8286188418560885] [:string_length 0.03861215812762708] [:exec_dup 0.36281269641276925] [G 0.4388142524183878] [:integer_quot 0.8694492537122628] [:integer_mult 0.8451340125154235] [:boolean_and 0.6146727449385168] [:string_reverse 0.28030606779758993] [:integer_subtract 0.17905827054251966] [:integer_mult 0.2665502926783778] [:string_drop 0.047227913359892515] [:boolean_or 0.5669632960971704] [:integer_mult 0.9270283143655245] [close 0.259950799224026] [G 0.9701159495162909] [T 0.6874309514686967] [:integer_eq 0.9032786830769932] [:integer_subtract 0.6504725528596227] [:boolean_and 0.38208732992745675] [:string_contains 0.18048948490637073] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.7050893384153124] [:boolean_and 0.8730973410905571] [:integer_eq 0.296672853898837] [G 0.7026350767358062] [C 0.10826506317220097] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.23992075553084546] [:string_length 0.6883775510618275] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.5601788450700756] [:boolean_or 0.12924503422044087] [:string_contains 0.8727550385067262] [:boolean_and 0.26786651094381886]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 10}
+{:num_tries 10}
+{:total_num_generations 3}
+{:list_of_successful_generations [0 0 0 1 1 0 1 0 0 0]}
+
+Beginning run number 11
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([G 0.48179540149704414] [true 0.47163587644179983] [close 0.977544579741962] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.08565129953102513] [ 0.4166104165426606] [0 0.264989630065978] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.43661011499601776] [:string_reverse 0.942618804207735] [C 0.08383692363804918] [:in1 0.31636163921066673] [:boolean_and 0.530427063952251] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.7838171038063654] [C 0.09910400518663554] [0 0.7474886668315837] [:integer_quot 0.294242262360356] [:exec_dup 0.7719290939271587] [:string_contains 0.4385229897226274] [:integer_mult 0.7914559352534095] [T 0.16403386750442284] [:in1 0.8516570058978106] [:string_contains 0.7193642973292154] [C 0.06841820264403531] [:boolean_or 0.585396092909334]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 11}
+{:num_tries 11}
+{:total_num_generations 4}
+{:list_of_successful_generations [0 0 0 1 1 0 1 0 0 0 1]}
+
+Beginning run number 12
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad-prob 0.5, :mutation-prob 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([G 0.8241968010640145] [true 0.9733066318127174] [:string_reverse 0.788304117455054] [0 0.48229272885684327] [0 0.8991110359589317] [:integer_add 0.3812984017305192] [:string_concat 0.7491166366469896] [:integer_subtract 0.9207426854631359] [:string_drop 0.009823893115213256] [:string_drop 0.054034979455146015] [:string_take 0.39871195987678376] [:in1 0.8311589058563403] [:boolean_or 0.2210145419868611] [:boolean_not 0.49300955856539774] [:boolean_eq 0.7479540266695703] [:integer_quot 0.8309314263912096] [A 0.7083288848674414] [:in1 0.2769849995883522] [:integer_add 0.8080960081582012] [1 0.1090687236627288] [false 0.08271594335909971] [:integer_quot 0.6819581603076055] [:boolean_eq 0.8937911336363037] [T 0.6807926966487758] [C 0.8535631425150862] [:in1 0.5971113960341122] [:boolean_eq 0.9811468671900291] [0 0.3681592938855882] [:string_take 0.030355533422198544] [:boolean_eq 0.9261737158198587] [:string_length 0.48236400343543107] [T 0.1634123933963998] [true 0.9534048051795999] [:string_take 0.027872104752203697] [G 0.2486978108198652] [:string_contains 0.4804117728406746] [:boolean_and 0.5037639218030662] [:string_drop 0.33216139528441535] [:integer_add 0.5324235243440416] [:integer_eq 0.3668581246336202] [:integer_add 0.8707637196433425] [:integer_quot 0.07067830029738043] [:string_drop 0.026183992182134186] [:string_take 0.03617187702139535] [:boolean_not 0.05267810119824179] [false 0.08037398281821095] [:integer_mult 0.9545423674625938] [false 0.08276432219403895] [G 0.23184460642384586] [C 0.8785363898752802] [C 0.5177582120847319] [:string_length 0.4680731752833378]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 12}
+{:num_tries 12}
+{:total_num_generations 4}
+{:list_of_successful_generations [0 0 0 1 1 0 1 0 0 0 1 0]}
+
+Results of run
+{:percent_of_successes 1.0}
+{:average_num_generations 0.33333334}
+{:list_of_successful_generations [0 0 0 1 1 0 1 0 0 0 1 0]}
+

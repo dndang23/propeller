@@ -1,0 +1,43 @@
+Beginning run number 1
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([:string_concat 0.03658945927305279] [:string_reverse 0.4535088959928284] [C 0.6267811786605698] [:boolean_not 0.43504746900900315] [:exec_if 0.10492747513342371] [T 0.8398939676346092] [:string_contains 0.2229859444889042] [:string_contains 0.5685407341298675] [:string_contains 0.3830449553987466] [:in1 0.6020478159335557] [:string_contains 0.9757398397675605] [:integer_subtract 0.823693755133925] [ 0.9939613798197419] [:integer_add 0.27164538093478074] [G 0.6854902617483316] [close 0.7892174532919211] [:exec_dup 0.2944819292940234] [1 0.01183089662369663] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.29802141781137736] [:string_length 0.9872646520067946] [:integer_eq 0.08062420011174143] [:string_eq 0.6957711087427187] [:exec_dup 0.1137993075567505] [:string_drop 0.4685015039409218] [:string_length 0.3737192407273756] [:integer_add 0.11775456775918136] [1 0.6886323970961852] [1 0.23398448310077147] [C 0.7567606055131249] [:boolean_and 0.9873198347386885] [:integer_eq 0.809772475198607] [:string_length 0.23247058577615043] [:string_reverse 0.9581146563324654] [:string_eq 0.26412079916118136] [:boolean_not 0.5809950523692399] [:boolean_or 0.13588824795518906] [1 0.20099410755480618] [:boolean_and 0.6422148217521847] [1 0.8933615940266927] [:string_eq 0.39354940483256373]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 1}
+{:num_tries 1}
+{:total_num_generations 0}
+{:list_of_successful_generations [0]}
+
+Beginning run number 2
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
+Completed run
+
+The best individual according to the genetic program is:
+{:plushy ([false 0.3020672047184799] [:exec_if 0.8501263339606457] [:string_concat 0.8207742414852714] [:string_eq 0.9130213926262815] [:integer_mult 0.8665484678995176] [:in1 0.3032235058865401] [:string_contains 0.5256365066536406] [:integer_subtract 0.06604249052399613] [false 0.8835852137827791] [:string_eq 0.3806115646770992] [:integer_add 0.5306969782747994] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.8941803039631958] [:string_contains 0.626334705029402] [T 0.8594570300096714] [:boolean_and 0.8994078195432522] [:integer_subtract 0.8785038235395183] [G 0.8467435116944945] [0 0.21764213484492578] [0 0.8034354380791384] [:integer_add 0.9976732069698292] [:string_concat 0.5943913254728337] [:integer_add 0.4193742740299694] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.7757738251997648] [:integer_mult 0.0644836383760432] [:integer_add 0.4773220071566264] [:string_drop 0.14790200960240973] [:string_take 0.04700401214841787] [:integer_add 0.9901521810929234] [ 0.8603144541646293] [false 0.4546671657401742] [:integer_mult 0.11689072499004582] [ 0.34850952583548334] [:integer_eq 0.3329603506162534] [ABCDEFGHIJKLMNOPQRSTUVWXYZ 0.9358245250594323] [:in1 0.7222967170337922] [true 0.5507347527644567] [:boolean_and 0.21057979740584254] [:integer_mult 0.5324121841211685] [:string_contains 0.4649336000699441] [close 0.2234986268677872] [:integer_subtract 0.8554197952264114] [:integer_mult 0.8795568140716209] [:string_drop 0.5587579507214726] [true 0.009356476394198898] [:exec_if 0.22374498673127752] [:boolean_eq 0.8029502136151238] [:boolean_not 0.4468600108722769] [0 0.9779591487265529] [:string_take 0.25634342018660605] [:integer_add 0.07743459454079249] [true 0.42148117488135073] [:boolean_and 0.15012632078922172] [G 0.5356349986622846] [1 0.9228858823432635] [T 0.8583362422696582] [:boolean_and 0.29405391460635943] [:integer_mult 0.031983760701682074] [G 0.9166858583075944] [:string_take 0.2477047136875864] [T 0.15390294178689035] [:boolean_or 0.7549791674559903] [false 0.04992533397873056] [:string_length 0.869794842839801] [:integer_quot 0.6157444093905927] [:in1 0.7123664305880703] [:exec_if 0.5460823898577336] [:integer_add 0.720673297149693] [ 0.004311147508363811] [:boolean_eq 0.7599685501059776] [:string_contains 0.7962710737859454] [:string_length 0.14759218489202108] [:boolean_and 0.7362340560847361] [A 0.7003585507991384] [:boolean_not 0.344257645457119]), :behaviors (false false false false true true true), :errors (0 0 0 0 0 0 0), :total-error 0}
+
+Statistics based on current number of runs: 
+{:num_successes 2}
+{:num_tries 2}
+{:total_num_generations 0}
+{:list_of_successful_generations [0 0]}
+
+Beginning run number 3
+
+Executing gp
+
+Arguments used in genetic program:
+{:starting-args {:max-initial-plushy-size 100, :training-data ({:input1 ["GCG"], :output1 [false]} {:input1 ["GACAG"], :output1 [false]} {:input1 ["AGAAG"], :output1 [false]} {:input1 ["CCCA"], :output1 [false]} {:input1 ["GATTACA"], :output1 [true]} {:input1 ["TAGG"], :output1 [true]} {:input1 ["GACT"], :output1 [true]}), :instructions "(:in1 :integer_add :integer_subtract :integer_mult :integer_quot :integer_eq :exec_dup :exec_if :boolean_and :boolean_or :boolean_not :boolean_eq :string_eq :string_take :string_drop :string_reverse :string_concat :string_length :string_contains close 0 1 true false \"\" \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" \"A\" \"C\" \"G\" \"T\")", :elitism false, :variation {:umad 0.5, :crossover 0.5}, :max-generations 500, :parent-selection :lexicase, :umad-rate 0.1, :tournament-size 5, :testing-data ({:input1 ["GCGT"], :output1 [true]} {:input1 ["GACTTAG"], :output1 [true]} {:input1 ["AGTAAG"], :output1 [true]} {:input1 ["TCCTCA"], :output1 [true]} {:input1 ["GAACA"], :output1 [false]} {:input1 ["AGG"], :output1 [false]} {:input1 ["GAC"], :output1 [false]}), :step-limit 200, :error-function "propeller.problems.string_classification$error_function@122d6c22", :population-size 500}}
+
