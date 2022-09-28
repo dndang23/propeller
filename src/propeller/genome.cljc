@@ -10,10 +10,12 @@
 ;    (rand-int max-initial-plushy-size)
 ;    #(utils/random-instruction instructions)))
 
+; adds probability to plushy
 (defn add-probability-to-plushy
   [plushy]
   (map #(conj [%] (rand)) plushy))
 
+; creates a random plushy and then adds probability to each instruction
 (defn make-random-plushy
   "Creates and returns a new plushy."
   [instructions max-initial-plushy-size]
@@ -37,6 +39,8 @@
 
                     20)
 
+; translates plushy with probability to regular plushy
+; used to create a subset of plushy with probability
 (defn plushy-with-prob->plushy
   [plushy-with-prob]
   ;(println plushy-with-prob)
@@ -48,12 +52,14 @@
 
 (plushy-with-prob->plushy (make-random-plushy [1 2 "integer_add" "exec_if" true false 4] 5))
 
+; translates plushy into a push program
 (defn plushy->push
   "Returns the Push program expressed by the given plushy representation."
   ([plushy] (plushy->push plushy {}))
   ([plushy argmap]
    (let [prob-plushy (plushy-with-prob->plushy plushy)
          plushy (if (:diploid argmap) (map first (partition 2 prob-plushy)) prob-plushy)
+         ;plushy (if (:diploid argmap) (map first (partition 2 plushy)) plushy)
          opener? #(and (vector? %) (= (first %) 'open))]    ;; [open <n>] marks opens
      (loop [push ()                                         ;; iteratively build the Push program from the plushy
             plushy (mapcat #(let [n (get instructions/opens %)]

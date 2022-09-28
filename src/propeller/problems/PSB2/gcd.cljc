@@ -72,20 +72,50 @@
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
   [& args]
-  (gp/gp
-    (merge
-      {:instructions            instructions
-       :error-function          error-function
-       :training-data           (:train train-and-test-data)
-       :testing-data            (:test train-and-test-data)
-       :max-generations         300
-       :population-size         1000
-       :max-initial-plushy-size 250
-       :step-limit              2000
-       :parent-selection        :lexicase
-       :tournament-size         5
-       :umad-rate               0.1
-       :variation               {:umad 1.0 :crossover 0.0}
-       :elitism                 false}
-      (apply hash-map (map #(if (string? %) (read-string %) %) args))))
-  (#?(:clj shutdown-agents)))
+  (loop [num_tries 0 num_successes 0 num_generations 0 generations_list []]
+    (if (= num_tries 12)
+      (if (= num_successes 0)
+        (do (println "Results of run")
+            (prn {:percent_of_successes (float (/ num_successes num_tries))})
+            (prn {:average_num_generations -1})
+            (prn {:list_of_successful_generations generations_list})
+            (println ))
+        (do (println "Results of run")
+            (prn {:percent_of_successes (float (/ num_successes num_tries))})
+            (prn {:average_num_generations (float (/ num_generations num_successes))})
+            (prn {:list_of_successful_generations generations_list})
+            (println )))
+      (do
+        (println "Beginning run number" (inc num_tries))
+        (println )
+        (let [output (gp/gp
+                       (merge
+                         {:instructions            instructions
+                          :error-function          error-function
+                          :training-data           (:train train-and-test-data)
+                          :testing-data            (:test train-and-test-data)
+                          :max-generations         300
+                          :population-size         1000
+                          :max-initial-plushy-size 250
+                          :step-limit              2000
+                          :parent-selection        :lexicase
+                          :tournament-size         5
+                          :umad-rate               0.1
+                          :variation               {:umad-prob 0.95 :mutation-prob 0.05 :crossover 0.0}
+                          :elitism                 false}
+                         (apply hash-map (map #(if (string? %) (read-string %) %) args))))
+              val  (if (nil? output)
+                     {:success-generation? 0 :num-generations 0}
+                     {:success-generation? 1 :num-generations (:success-generation output)})
+              updated_list (if (nil? output)
+                             generations_list
+                             (conj generations_list (:success-generation output)))]
+          (println "Statistics based on current number of runs: ")
+          (prn {:num_successes (+ num_successes (:success-generation? val))})
+          (prn {:num_tries (inc num_tries)})
+          (prn {:total_num_generations (+ num_generations (:num-generations val))})
+          (prn {:list_of_successful_generations updated_list})
+          (println )
+          (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list)))))
+  ;(#?(:clj shutdown-agents))
+  )
