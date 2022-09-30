@@ -73,7 +73,7 @@
   "Runs propel-gp, giving it a map of arguments."
   [& args]
   (loop [num_tries 0 num_successes 0 num_generations 0 generations_list []]
-    (if (= num_tries 12)
+    (if (= num_tries 1)
       (if (= num_successes 0)
         (do (println "Results of run")
             (prn {:percent_of_successes (float (/ num_successes num_tries))})
@@ -101,7 +101,7 @@
                           :parent-selection        :lexicase
                           :tournament-size         5
                           :umad-rate               0.1
-                          :variation               {:umad-prob 0.95 :mutation-prob 0.05 :crossover 0.0}
+                          :variation               {:umad-prob 0.05 :mutation-prob 0.95 :crossover 0.0}
                           :elitism                 false}
                          (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)

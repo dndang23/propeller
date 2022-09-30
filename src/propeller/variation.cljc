@@ -126,7 +126,7 @@
 ;mutates the probabilities of plushy
 (defn prob-mutation
   [plushy]
-  (map #(if (< (rand) 0.05)
+  (map #(if (< (rand) 1)
           [(first %) (perturb-with-gaussian-noise 0.01 (last %))]
           %)
        plushy))
