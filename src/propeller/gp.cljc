@@ -52,7 +52,7 @@
          population (mapper
                       (fn [_] {:plushy (genome/make-random-plushy instructions max-initial-plushy-size)})
                       (range population-size))]
-    (let [evaluated-pop (sort-by :total-error
+    (let [evaluated-pop (sort-by :average-error
                                  (mapper
                                    (partial error-function argmap (:training-data argmap))
                                    population))
@@ -60,10 +60,11 @@
       (if (:custom-report argmap)
         ((:custom-report argmap) evaluated-pop generation argmap))
       ;(report evaluated-pop generation argmap))
-      ;(prn best-individual)
+      (println "the best individual for this run is:")
+      (prn best-individual)
       (cond
         ;; Success on training cases is verified on testing cases
-        (<= (:total-error best-individual) solution-error-threshold)
+        (<= (:average-error best-individual) solution-error-threshold)
         (do (println "Completed run")
             (println)
             (println "The best individual according to the genetic program is:")

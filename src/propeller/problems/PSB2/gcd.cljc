@@ -69,6 +69,23 @@
       :total-error #?(:clj  (apply +' errors)
                       :cljs (apply + errors)))))
 
+(defn multiple-evaluation-function
+  [argmap data individual]
+  (loop [i 0 limit 5 behaviors_list [] error_list [] total_error_list []]
+    (println "yo what is up dude")
+    (if (= i limit)
+      (assoc individual
+        :behaviors behaviors_list
+        :errors error_list
+        :total-error total_error_list
+        :average-error (float (/ #?(:clj  (apply +' total_error_list)
+                                    :cljs (apply + total_error_list)) (count total_error_list))))
+      (let [error_map (error-function argmap data error-function)
+            behaviors (:behaviors error_map)
+            errors (:errors error_map)
+            total_error (:total-error total_error_list)]
+        (recur (inc i) limit (conj behaviors_list behaviors) (conj error_list errors) (conj total_error_list total_error))))))
+
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
   [& args]
@@ -91,7 +108,7 @@
         (let [output (gp/gp
                        (merge
                          {:instructions            instructions
-                          :error-function          error-function
+                          :error-function          multiple-evaluation-function
                           :training-data           (:train train-and-test-data)
                           :testing-data            (:test train-and-test-data)
                           :max-generations         300

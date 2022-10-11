@@ -193,6 +193,7 @@
                     op1
                     (recur (+ accum prob1)
                            (rest ops-probs))))))]
+     ;(println (:plushy (selection/select-parent pop argmap)))
      (case op
        :crossover
        (crossover

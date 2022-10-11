@@ -59,12 +59,30 @@
        :total-error #?(:clj  (apply +' errors)
                        :cljs (apply + errors))))))
 
+(defn multiple-evaluation-function
+  [argmap data individual]
+  (loop [i 0 limit 5 behaviors_list [] error_list [] total_error_list []]
+    (if (= i limit)
+      (assoc individual
+        :behaviors behaviors_list
+        :errors error_list
+        :case_total_error #?(:clj  (apply map +' error_list)
+                             :cljs (apply map + error_list))
+        :total-error total_error_list
+        :average-error (float (/ #?(:clj  (apply +' total_error_list)
+                                    :cljs (apply + total_error_list)) (count total_error_list))))
+      (let [error_map (error-function argmap data individual)
+            behaviors (:behaviors error_map)
+            errors (:errors error_map)
+            total_error (:total-error error_map)]
+        (recur (inc i) limit (conj behaviors_list behaviors) (conj error_list errors) (conj total_error_list total_error))))))
+
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
   [& args]
 
   (loop [num_tries 0 num_successes 0 num_generations 0 generations_list []]
-    (if (= num_tries 12)
+    (if (= num_tries 1)
       (if (= num_successes 0)
         (do (println "Results of run")
             (prn {:percent_of_successes (float (/ num_successes num_tries))})
@@ -82,7 +100,7 @@
         (let [output   (gp/gp
                          (merge
                            {:instructions             instructions
-                            :error-function           error-function
+                            :error-function           multiple-evaluation-function
                             :training-data            (:train train-and-test-data)
                             :testing-data             (:test train-and-test-data)
                             :max-generations          500
@@ -92,7 +110,7 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            :variation                 {:umad-prob 0.5 :mutation-prob 0.5}
+                            :variation                 {:umad-prob 0.95 :mutation-prob 0.05 :crossover 0.0}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)
