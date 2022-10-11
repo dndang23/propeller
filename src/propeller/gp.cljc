@@ -60,6 +60,7 @@
       (if (:custom-report argmap)
         ((:custom-report argmap) evaluated-pop generation argmap))
       ;(report evaluated-pop generation argmap))
+      ;(prn best-individual)
       (cond
         ;; Success on training cases is verified on testing cases
         (<= (:total-error best-individual) solution-error-threshold)
