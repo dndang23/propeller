@@ -57,11 +57,12 @@
        :behaviors outputs
        :errors errors
        :total-error #?(:clj  (apply +' errors)
-                       :cljs (apply + errors))))))
+                       :cljs (apply + errors))
+       :program program))))
 
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 5 behaviors_list [] error_list [] total_error_list []]
+  (loop [i 0 limit 5 behaviors_list [] error_list [] total_error_list [] map_list []]
     (if (= i limit)
       (assoc individual
         :behaviors behaviors_list
@@ -69,13 +70,15 @@
         :case_total_error #?(:clj  (apply map +' error_list)
                              :cljs (apply map + error_list))
         :total-error total_error_list
+        :program_list map_list
         :average-error (float (/ #?(:clj  (apply +' total_error_list)
                                     :cljs (apply + total_error_list)) (count total_error_list))))
       (let [error_map (error-function argmap data individual)
             behaviors (:behaviors error_map)
             errors (:errors error_map)
-            total_error (:total-error error_map)]
-        (recur (inc i) limit (conj behaviors_list behaviors) (conj error_list errors) (conj total_error_list total_error))))))
+            total_error (:total-error error_map)
+            program (:program error_map)]
+        (recur (inc i) limit (conj behaviors_list behaviors) (conj error_list errors) (conj total_error_list total_error) (conj map_list (assoc {} :program program :total-error total_error)))))))
 
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
