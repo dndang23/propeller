@@ -29,6 +29,7 @@
                             :average-total-error   (float (/ (reduce + (map :total-error pop)) (count pop)))})
     (println)))
 
+; solution threshold = 0.1 (for now)
 (defn gp
   "Main GP loop."
   [{:keys [population-size max-generations error-function instructions
@@ -52,7 +53,7 @@
          population (mapper
                       (fn [_] {:plushy (genome/make-random-plushy instructions max-initial-plushy-size)})
                       (range population-size))]
-    (let [evaluated-pop (sort-by :average-error
+    (let [evaluated-pop (sort-by :total-error
                                  (mapper
                                    (partial error-function argmap (:training-data argmap))
                                    population))
@@ -64,7 +65,7 @@
       (prn best-individual)
       (cond
         ;; Success on training cases is verified on testing cases
-        (<= (:average-error best-individual) solution-error-threshold)
+        (<= (:total-error best-individual) solution-error-threshold)
         (do (println "Completed run")
             (println)
             (println "The best individual according to the genetic program is:")

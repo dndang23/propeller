@@ -1,4 +1,4 @@
-(ns propeller.problems.simple-regression
+(ns propeller.problems.symbolic_regression_1
   (:require [propeller.genome :as genome]
             [propeller.push.interpreter :as interpreter]
             [propeller.push.state :as state]
@@ -7,33 +7,20 @@
             #?(:cljs [cljs.reader :refer [read-string]])))
 
 (defn- target-function
-  "Target function: f(x) = x^3 + x + 3"
+  "Target function: f(x) = x^4 + x^3 + x^2 + x"
   [x]
-  (+ (* x x x) x 3))
+  (+ (* x x x x) (* x x x) (* x x) x))
 
 ;(range -1.0 0.9 0.1)
 ;no testing set
 
 (def train-and-test-data
-  (let [train-inputs (range -10 11)
-        test-inputs (concat (range -20 -10) (range 11 21))]
-    {:train (map (fn [x] {:input1 (vector x) :output1 (vector (target-function x))}) train-inputs)
-     :test (map (fn [x] {:input1 (vector x) :output1 (vector (target-function x))}) test-inputs)}))
+  (let [train-inputs (range -1.0 0.9 0.1)]
+    {:train (map (fn [x] {:input1 (vector x) :output1 (vector (target-function x))}) train-inputs)}))
+
+(print (first (:train train-and-test-data)))
 
 (def instructions
-  (list :in1
-        :integer_add
-        :integer_subtract
-        :integer_mult
-        :integer_quot
-        :integer_eq
-        :exec_dup
-        :exec_if
-        'close
-        0
-        1))
-
-(def instructions_2
   (list :in1
         :float_add
         :float_subtract
@@ -57,7 +44,7 @@
                             program
                             (assoc state/empty-state :input {:in1 input})
                             (:step-limit argmap))
-                          :integer))
+                          :float))
                       inputs)
          errors (map (fn [correct-output output]
                        (if (= output :no-stack-item)
@@ -76,23 +63,21 @@
 ;pick minimum total error
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 5 behaviors_list [] error_list [] total_error_list [] map_list []]
+  (loop [i 0 limit 5 behaviors_list '() error_list '() min_total_error 99999 min_program '()]
     (if (= i limit)
       (assoc individual
         :behaviors behaviors_list
         :errors error_list
-        :case_total_error #?(:clj  (apply map +' error_list)
-                             :cljs (apply map + error_list))
-        :total-error total_error_list
-        :program_list map_list
-        :average-error (float (/ #?(:clj  (apply +' total_error_list)
-                                    :cljs (apply + total_error_list)) (count total_error_list))))
+        :total-error min_total_error
+        :program min_program)
       (let [error_map (error-function argmap data individual)
             behaviors (:behaviors error_map)
             errors (:errors error_map)
             total_error (:total-error error_map)
             program (:program error_map)]
-        (recur (inc i) limit (conj behaviors_list behaviors) (conj error_list errors) (conj total_error_list total_error) (conj map_list (assoc {} :program program :total-error total_error)))))))
+        (if (< total_error min_total_error)
+          (recur (inc i) limit (concat behaviors_list behaviors) (concat error_list errors) total_error program)
+          (recur (inc i) limit (concat behaviors_list behaviors) (concat error_list errors) min_total_error min_program))))))
 
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
@@ -119,15 +104,16 @@
                            {:instructions             instructions
                             :error-function           multiple-evaluation-function
                             :training-data            (:train train-and-test-data)
-                            :testing-data             (:test train-and-test-data)
+                            :testing-data             nil
                             :max-generations          500
                             :population-size          500
                             :max-initial-plushy-size  100
+                            :solution-error-threshold 0.1
                             :step-limit               200
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            :variation                 {:umad-prob 0.95 :mutation-prob 0.05 :crossover 0.0}
+                            :variation                 {:umad-prob 0.10 :mutation-prob 0.90 :crossover 0.0}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)
