@@ -102,7 +102,7 @@
         (let [output   (gp/gp
                          (merge
                            {:instructions             instructions
-                            :error-function           multiple-evaluation-function
+                            :error-function           error-function
                             :training-data            (:train train-and-test-data)
                             :testing-data             nil
                             :max-generations          500
@@ -113,7 +113,7 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            :variation                 {:umad-prob 0.10 :mutation-prob 0.90 :crossover 0.0}
+                            :variation                 {:umad 0.5 :crossover 0.5}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)
