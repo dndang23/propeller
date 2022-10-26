@@ -21,11 +21,26 @@
 ;                       survivors)
 ;               (rest cases))))))
 
+(defn min_index
+  [list]
+  (loop [index 0 min_index 0]
+    (if (= index (count list))
+      (prn [min_index (nth list min_index)])
+      (if (< (nth list index) (nth list min_index))
+        (recur (inc index) index)
+        (recur (inc index) min_index)))))
+
 (defn lexicase-selection
   "Selects an individual from the population using lexicase selection."
   [pop argmap]
   (loop [survivors (map rand-nth (vals (group-by :errors pop)))
          cases (shuffle (range (count (:errors (first pop)))))]
+    ;(println survivors)
+    ;(println cases)
+    ;(println (map #(count %) (map :errors survivors)))
+    ;(println (min_index (map #(count %) (map :errors survivors))))
+    ;(println (map #(nth % (first cases))
+     ;             (map :errors survivors)))
     (if (or (empty? cases)
             (empty? (rest survivors)))
       (rand-nth survivors)

@@ -131,7 +131,7 @@
           %)
        plushy))
 
-(prob-mutation '(["integer_add" 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353]))
+;(prob-mutation '(["integer_add" 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353]))
 
 (defn diploid-uniform-silent-replacement
   "Returns plushy with new instructions possibly replacing existing
@@ -193,7 +193,6 @@
                     op1
                     (recur (+ accum prob1)
                            (rest ops-probs))))))]
-     ;(println (:plushy (selection/select-parent pop argmap)))
      (case op
        :crossover
        (crossover

@@ -18,7 +18,7 @@
   (let [train-inputs (range -1.0 0.9 0.1)]
     {:train (map (fn [x] {:input1 (vector x) :output1 (vector (target-function x))}) train-inputs)}))
 
-(print (first (:train train-and-test-data)))
+;(print (first (:train train-and-test-data)))
 
 (def instructions
   (list :in1
@@ -63,21 +63,21 @@
 ;pick minimum total error
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 5 behaviors_list '() error_list '() min_total_error 99999 min_program '()]
+  (loop [i 0 limit 5 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '()]
     (if (= i limit)
       (assoc individual
-        :behaviors behaviors_list
-        :errors error_list
-        :total-error min_total_error
-        :program min_program)
+          :behaviors min_behaviors_list
+          :errors min_error_list
+          :total-error min_total_error
+          :program min_program)
       (let [error_map (error-function argmap data individual)
             behaviors (:behaviors error_map)
             errors (:errors error_map)
             total_error (:total-error error_map)
             program (:program error_map)]
         (if (< total_error min_total_error)
-          (recur (inc i) limit (concat behaviors_list behaviors) (concat error_list errors) total_error program)
-          (recur (inc i) limit (concat behaviors_list behaviors) (concat error_list errors) min_total_error min_program))))))
+          (recur (inc i) limit behaviors errors total_error program)
+          (recur (inc i) limit min_behaviors_list min_error_list min_total_error min_program))))))
 
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
@@ -102,7 +102,7 @@
         (let [output   (gp/gp
                          (merge
                            {:instructions             instructions
-                            :error-function           error-function
+                            :error-function           multiple-evaluation-function
                             :training-data            (:train train-and-test-data)
                             :testing-data             nil
                             :max-generations          500
@@ -113,7 +113,8 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            :variation                 {:umad 0.5 :crossover 0.5}
+                            ;:variation                 {:umad 0.5 :crossover 0.5}
+                            :variation                {:umad-prob 0.05 :mutation-prob 0.95 :crossover 0.0}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)
