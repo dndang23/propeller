@@ -20,8 +20,10 @@
 
 ;(print (first (:train train-and-test-data)))
 
+;Added ephemeral constant
 (def instructions
-  (list :in1
+  (list rand
+        :in1
         :float_add
         :float_subtract
         :float_mult

@@ -21,7 +21,8 @@
 ;(print (first (:train train-and-test-data)))
 
 (def instructions
-  (list :in1
+  (list rand
+        :in1
         :float_add
         :float_subtract
         :float_mult
@@ -63,21 +64,22 @@
 ;pick minimum total error
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 5 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '()]
+  (loop [i 0 limit 5 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() testers '()]
     (if (= i limit)
       (assoc individual
           :behaviors min_behaviors_list
           :errors min_error_list
           :total-error min_total_error
-          :program min_program)
+          :program min_program
+          :testers testers)
       (let [error_map (error-function argmap data individual)
             behaviors (:behaviors error_map)
             errors (:errors error_map)
             total_error (:total-error error_map)
             program (:program error_map)]
         (if (< total_error min_total_error)
-          (recur (inc i) limit behaviors errors total_error program)
-          (recur (inc i) limit min_behaviors_list min_error_list min_total_error min_program))))))
+          (recur (inc i) limit behaviors errors total_error program (concat testers error_map))
+          (recur (inc i) limit min_behaviors_list min_error_list min_total_error min_program (concat testers error_map)))))))
 
 (defn -main
   "Runs propel-gp, giving it a map of arguments."

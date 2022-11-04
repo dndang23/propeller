@@ -131,6 +131,8 @@
           %)
        plushy))
 
+
+
 ;(prob-mutation '(["integer_add" 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353]))
 
 (defn diploid-uniform-silent-replacement
@@ -182,6 +184,8 @@
   "Returns a new individual produced by selection and variation of
   individuals in the population."
   [pop argmap]
+  ;(println "yolo")
+  ;(prn best-individual)
   {:plushy
    (let [r (rand)
          op (loop [accum 0.0
