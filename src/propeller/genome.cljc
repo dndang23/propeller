@@ -58,9 +58,9 @@
   "Returns the Push program expressed by the given plushy representation."
   ([plushy] (plushy->push plushy {}))
   ([plushy argmap]
-   (let [prob-plushy (plushy-with-prob->plushy plushy)
-         plushy (if (:diploid argmap) (map first (partition 2 prob-plushy)) prob-plushy)
-         ;plushy (if (:diploid argmap) (map first (partition 2 plushy)) plushy)
+   (let [;prob-plushy (plushy-with-prob->plushy plushy)
+         ;plushy (if (:diploid argmap) (map first (partition 2 prob-plushy)) prob-plushy)
+         plushy (if (:diploid argmap) (map first (partition 2 plushy)) plushy)
          opener? #(and (vector? %) (= (first %) 'open))]    ;; [open <n>] marks opens
      (loop [push ()                                         ;; iteratively build the Push program from the plushy
             plushy (mapcat #(let [n (get instructions/opens %)]

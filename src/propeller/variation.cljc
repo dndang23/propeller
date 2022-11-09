@@ -123,6 +123,42 @@
   [sd n]
   (+' n (*' sd (gaussian-noise-factor))))
 
+(defn getPosVal
+  []
+  (loop [temp (gaussian-noise-factor)]
+    (if (> temp 0)
+      temp
+      (recur (gaussian-noise-factor)))))
+
+(defn getNegVal
+  []
+  (loop [temp (gaussian-noise-factor)]
+    (if (< temp 0)
+      temp
+      (recur (gaussian-noise-factor)))))
+
+(defn perturb-with-positive-gaussian-noise
+  "Returns n perturbed with std dev sd."
+  [sd n]
+  ;(prn n)
+  (let [val (+' n (*' sd (gaussian-noise-factor)) 0.01)]
+    (if (> val 1)
+      1
+      (if (< val 0)
+        0
+        val))))
+
+(defn perturb-with-negative-gaussian-noise
+  "Returns n perturbed with std dev sd."
+  [sd n]
+  (let [val (+' n (*' sd (gaussian-noise-factor)))
+        val_2 (- val 0.01)]
+    (if (< val_2 0)
+      0
+      (if (> val_2 1)
+        1
+        val_2))))
+
 ;mutates the probabilities of plushy
 (defn prob-mutation
   [plushy]
@@ -131,9 +167,34 @@
           %)
        plushy))
 
+(defn checker-instr-in-plushy
+  [instr best-plushy i]
+  (let [boolean-plushy (last best-plushy)
+        length (count boolean-plushy)]
+    (if (> i (- length 1))
+      false
+      (let [best-tuple (nth boolean-plushy i)
+            best-instr (first best-tuple)
+            best-bool (last best-tuple)]
+        (if (and (= instr best-instr) (= best-bool true))
+          true
+          false)))))
 
+(defn best-plushy-prob-mutation
+  [plushy best-plushy]
+  (loop [i (- (count plushy) 1)
+         new_plushy '()]
+    (if (= i -1)
+      new_plushy
+      (let [cur-plushy (nth plushy i)
+            plushy-instruction (first cur-plushy)
+            is-in-best-plushy (checker-instr-in-plushy plushy-instruction best-plushy i)]
+        (if (= is-in-best-plushy true)
+          (recur (dec i) (conj new_plushy[(first cur-plushy) (perturb-with-positive-gaussian-noise 0.01 (last cur-plushy))]))
+          (recur (dec i) (conj new_plushy[(first cur-plushy) (perturb-with-negative-gaussian-noise 0.01 (last cur-plushy))])))))))
 
-;(prob-mutation '(["integer_add" 0.9504416885390561] [true 0.41428932725239154] [1 0.5576250442969661] ["exec_if" 0.7222062772248353]))
+;(= :in1 :in1)
+;(best-plushy-prob-mutation '([:in1 0.7192694405822808] [0.08692005434008143 0.803755695111884] [:float_mult 0.6934938590786862] [:float_sin 0.8479153181578405]) ['(:in1 :float_cos :float_add 0.527870165162838) '([:in1 true] [:float_cos true] [:float_add false] [0.527870165162838 true])])
 
 (defn diploid-uniform-silent-replacement
   "Returns plushy with new instructions possibly replacing existing
@@ -183,9 +244,7 @@
 (defn new-individual
   "Returns a new individual produced by selection and variation of
   individuals in the population."
-  [pop argmap]
-  ;(println "yolo")
-  ;(prn best-individual)
+  [best-plushy pop argmap]
   {:plushy
    (let [r (rand)
          op (loop [accum 0.0
@@ -221,6 +280,11 @@
        :mutation-prob
        (-> (:plushy (selection/select-parent pop argmap))
            (prob-mutation))
+       ;
+       :best-plushy-prob-mutation-prob
+       (-> (:plushy (selection/select-parent pop argmap))
+           (best-plushy-prob-mutation best-plushy))
+       ;
        :rumad
        (let [parent-genome (:plushy (selection/select-parent pop argmap))
              after-addition (uniform-addition parent-genome

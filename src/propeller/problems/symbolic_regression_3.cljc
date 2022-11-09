@@ -20,10 +20,8 @@
 
 ;(print (first (:train train-and-test-data)))
 
-;Added ephemeral constant
 (def instructions
-  (list rand
-        :in1
+  (list :in1
         :float_add
         :float_subtract
         :float_mult
@@ -31,13 +29,38 @@
         :float_cos
         :float_sin))
 
+(defn plushy-with-prob->plushy
+  [plushy-with-prob]
+  ;(println plushy-with-prob)
+  (filter identity (map (fn [[thing prob]]
+                          (if (< (rand) prob)
+                            [thing true]
+                            [thing false]))
+                        plushy-with-prob)))
+
+;(plushy-with-prob->plushy '([1 1] [:integer_add 1] [:integer_mult 1]))
+
+
+(defn plushy-with-prob->plushy_2
+  [plushy-with-prob]
+  ;(println plushy-with-prob)
+  (filter identity (map (fn [[thing boolean]]
+                          (if (= boolean true)
+                            thing
+                            nil))
+                        plushy-with-prob)))
+
+;(plushy-with-prob->plushy_2 (plushy-with-prob->plushy '([1 0] [:integer_add 0] [:integer_mult 0])))
+
 (defn error-function
   "Finds the behaviors and errors of an individual. The error is the absolute
   deviation between the target output value and the program's selected behavior,
   or 1000000 if no behavior is produced. The behavior is here defined as the
   final top item on the INTEGER stack."
   ([argmap data individual]
-   (let [program (genome/plushy->push (:plushy individual) argmap)
+   (let [boolean_plushy (plushy-with-prob->plushy (:plushy individual))
+         regular_plushy (plushy-with-prob->plushy_2 boolean_plushy)
+         program (genome/plushy->push regular_plushy argmap)
          inputs (map (fn [x] (first (:input1 x))) data)
          correct-outputs (map (fn [x] (first (:output1 x))) data)
          outputs (map (fn [input]
@@ -59,27 +82,30 @@
        :errors errors
        :total-error #?(:clj  (apply +' errors)
                        :cljs (apply + errors))
+       :boolean-plushy boolean_plushy
        :program program))))
 
 ;giant vectors of outputs and errors
 ;pick minimum total error
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 5 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '()]
+  (loop [i 0 limit 5 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() min-program-boolean-plushy '()]
     (if (= i limit)
       (assoc individual
         :behaviors min_behaviors_list
         :errors min_error_list
-        :total-error min_total_error
-        :program min_program)
+        :min-program-boolean-plushy min-program-boolean-plushy
+        :program min_program
+        :total-error min_total_error)
       (let [error_map (error-function argmap data individual)
             behaviors (:behaviors error_map)
             errors (:errors error_map)
             total_error (:total-error error_map)
+            boolean-plushy (:boolean-plushy error_map)
             program (:program error_map)]
         (if (< total_error min_total_error)
-          (recur (inc i) limit behaviors errors total_error program)
-          (recur (inc i) limit min_behaviors_list min_error_list min_total_error min_program))))))
+          (recur (inc i) limit behaviors errors total_error program boolean-plushy)
+          (recur (inc i) limit min_behaviors_list min_error_list min_total_error min_program min-program-boolean-plushy))))))
 
 (defn -main
   "Runs propel-gp, giving it a map of arguments."
@@ -116,7 +142,7 @@
                             :tournament-size          5
                             :umad-rate                0.1
                             ;:variation                 {:umad 0.5 :crossover 0.5}
-                            :variation                {:umad-prob 0.05 :mutation-prob 0.95 :crossover 0.0}
+                            :variation                {:umad-prob 0.30 :best-plushy-prob-mutation-prob 0.70 :crossover 0.0}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)

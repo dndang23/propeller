@@ -71,8 +71,10 @@
       (if (:custom-report argmap)
         ((:custom-report argmap) evaluated-pop generation argmap))
       ;(report evaluated-pop generation argmap))
+      (println)
       (println "the best individual for this run is:")
       (prn best-individual)
+      (println)
       (if (some? (that_plushy evaluated-pop))
         (do
           (prn (that_plushy evaluated-pop))))
@@ -98,7 +100,7 @@
         :else (recur (inc generation)
                      (if (:elitism argmap)
                        (conj (repeatedly (dec population-size)
-                                         #(variation/new-individual evaluated-pop argmap))
+                                         #(variation/new-individual [(:program best-individual) (:min-program-boolean-plushy best-individual)] evaluated-pop argmap))
                              (first evaluated-pop))
                        (repeatedly population-size
-                                   #(variation/new-individual evaluated-pop argmap))))))))
+                                   #(variation/new-individual [(:program best-individual) (:min-program-boolean-plushy best-individual)] evaluated-pop argmap))))))))
