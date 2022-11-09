@@ -21,7 +21,10 @@
 ;(print (first (:train train-and-test-data)))
 
 (def instructions
-  (list :in1
+  (list 0
+        1
+        2
+        :in1
         :float_add
         :float_subtract
         :float_mult
