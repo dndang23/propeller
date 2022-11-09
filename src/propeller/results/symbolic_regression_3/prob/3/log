@@ -1,122 +1,31 @@
-000 (2092.000.000) 10/19 06:09:50 Job submitted from host: <148.85.78.197:9618?addrs=148.85.78.197-9618&noUDP&sock=4177225_e5af_96>
+000 (2180.000.000) 11/09 04:41:43 Job submitted from host: <148.85.78.197:9618?addrs=148.85.78.197-9618&noUDP&sock=4177225_e5af_96>
 ...
-001 (2092.000.000) 10/19 06:09:52 Job executing on host: <148.85.78.194:9618?addrs=148.85.78.194-9618&noUDP&sock=38508_2d77_3>
+001 (2180.000.000) 11/09 04:41:59 Job executing on host: <148.85.78.200:9618?addrs=148.85.78.200-9618&noUDP&sock=2548_9bce_3>
 ...
-006 (2092.000.000) 10/19 06:10:01 Image size of job updated: 73721136
-	1522  -  MemoryUsage of job (MB)
-	1558248  -  ResidentSetSize of job (KB)
+006 (2180.000.000) 11/09 04:42:08 Image size of job updated: 24538256
+	282  -  MemoryUsage of job (MB)
+	288684  -  ResidentSetSize of job (KB)
 ...
-006 (2092.000.000) 10/19 06:15:02 Image size of job updated: 75318672
-	1541  -  MemoryUsage of job (MB)
-	1577276  -  ResidentSetSize of job (KB)
+006 (2180.000.000) 11/09 04:47:09 Image size of job updated: 24538256
+	1243  -  MemoryUsage of job (MB)
+	1271884  -  ResidentSetSize of job (KB)
 ...
-006 (2092.000.000) 10/19 06:20:02 Image size of job updated: 75318672
-	1543  -  MemoryUsage of job (MB)
-	1580028  -  ResidentSetSize of job (KB)
+006 (2180.000.000) 11/09 04:52:10 Image size of job updated: 24538256
+	1243  -  MemoryUsage of job (MB)
+	1272372  -  ResidentSetSize of job (KB)
 ...
-006 (2092.000.000) 10/19 06:25:03 Image size of job updated: 75318672
-	1546  -  MemoryUsage of job (MB)
-	1582884  -  ResidentSetSize of job (KB)
-...
-006 (2092.000.000) 10/19 06:30:04 Image size of job updated: 75318672
-	1549  -  MemoryUsage of job (MB)
-	1585516  -  ResidentSetSize of job (KB)
-...
-006 (2092.000.000) 10/19 06:35:04 Image size of job updated: 75318672
-	1552  -  MemoryUsage of job (MB)
-	1588380  -  ResidentSetSize of job (KB)
-...
-006 (2092.000.000) 10/19 06:40:04 Image size of job updated: 75318672
-	1554  -  MemoryUsage of job (MB)
-	1591188  -  ResidentSetSize of job (KB)
-...
-006 (2092.000.000) 10/19 06:45:05 Image size of job updated: 75318672
-	1557  -  MemoryUsage of job (MB)
-	1593812  -  ResidentSetSize of job (KB)
-...
-006 (2092.000.000) 10/19 06:50:05 Image size of job updated: 75318672
-	1559  -  MemoryUsage of job (MB)
-	1596092  -  ResidentSetSize of job (KB)
-...
-006 (2092.000.000) 10/19 06:55:05 Image size of job updated: 75318672
-	1560  -  MemoryUsage of job (MB)
-	1597340  -  ResidentSetSize of job (KB)
-...
-006 (2092.000.000) 10/19 07:00:07 Image size of job updated: 75318672
-	1561  -  MemoryUsage of job (MB)
-	1597640  -  ResidentSetSize of job (KB)
-...
-005 (2092.000.000) 10/19 07:03:06 Job terminated.
+005 (2180.000.000) 11/09 04:54:44 Job terminated.
 	(1) Normal termination (return value 0)
-		Usr 0 00:54:28, Sys 0 00:00:04  -  Run Remote Usage
+		Usr 0 00:12:51, Sys 0 00:00:01  -  Run Remote Usage
 		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
-		Usr 0 00:54:28, Sys 0 00:00:04  -  Total Remote Usage
+		Usr 0 00:12:51, Sys 0 00:00:01  -  Total Remote Usage
 		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
 	0  -  Run Bytes Sent By Job
 	0  -  Run Bytes Received By Job
 	0  -  Total Bytes Sent By Job
 	0  -  Total Bytes Received By Job
 	Partitionable Resources :    Usage  Request Allocated 
-	   Cpus                 :     1.03        1         1 
-	   Disk (KB)            :     1           1    845472 
-	   Memory (MB)          :  1561           1      8075 
-...
-000 (2144.000.000) 10/26 15:11:46 Job submitted from host: <148.85.78.197:9618?addrs=148.85.78.197-9618&noUDP&sock=4177225_e5af_96>
-...
-001 (2144.000.000) 10/26 15:12:05 Job executing on host: <148.85.78.195:9618?addrs=148.85.78.195-9618&noUDP&sock=30067_5a8b_3>
-...
-006 (2144.000.000) 10/26 15:12:13 Image size of job updated: 212224
-	159  -  MemoryUsage of job (MB)
-	162748  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 15:17:13 Image size of job updated: 74919288
-	2476  -  MemoryUsage of job (MB)
-	2534404  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 15:22:14 Image size of job updated: 74919288
-	2476  -  MemoryUsage of job (MB)
-	2534572  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 15:27:14 Image size of job updated: 74919288
-	2483  -  MemoryUsage of job (MB)
-	2541588  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 16:32:21 Image size of job updated: 74919288
-	2501  -  MemoryUsage of job (MB)
-	2560136  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 16:37:21 Image size of job updated: 74919288
-	2523  -  MemoryUsage of job (MB)
-	2582652  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 16:42:22 Image size of job updated: 74919288
-	2523  -  MemoryUsage of job (MB)
-	2582720  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 16:47:22 Image size of job updated: 74919288
-	2523  -  MemoryUsage of job (MB)
-	2582800  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 16:52:22 Image size of job updated: 74919288
-	2523  -  MemoryUsage of job (MB)
-	2582868  -  ResidentSetSize of job (KB)
-...
-006 (2144.000.000) 10/26 16:57:23 Image size of job updated: 74919288
-	2523  -  MemoryUsage of job (MB)
-	2582940  -  ResidentSetSize of job (KB)
-...
-005 (2144.000.000) 10/26 17:01:18 Job terminated.
-	(1) Normal termination (return value 0)
-		Usr 0 01:30:52, Sys 0 00:00:02  -  Run Remote Usage
-		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
-		Usr 0 01:30:52, Sys 0 00:00:02  -  Total Remote Usage
-		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
-	0  -  Run Bytes Sent By Job
-	0  -  Run Bytes Received By Job
-	0  -  Total Bytes Sent By Job
-	0  -  Total Bytes Received By Job
-	Partitionable Resources :    Usage  Request Allocated 
-	   Cpus                 :     0.79        1         1 
-	   Disk (KB)            :     1           1    845472 
-	   Memory (MB)          :  2523           1      8075 
+	   Cpus                 :     1.01        1         1 
+	   Disk (KB)            :     1           1   3385600 
+	   Memory (MB)          :  1243           1      4030 
 ...
