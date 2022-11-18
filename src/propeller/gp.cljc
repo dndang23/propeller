@@ -29,15 +29,15 @@
                             :average-total-error   (float (/ (reduce + (map :total-error pop)) (count pop)))})
     (println)))
 
-(defn that_plushy
-  [list]
-  (loop [index 0]
-    (if (= index (count list))
-      nil
-      (let [plushy (nth list index)]
-        (if (= (:total-error plushy) 99999)
-          plushy
-          (recur (inc index)))))))
+;(defn that_plushy
+;  [list]
+;  (loop [index 0]
+;    (if (= index (count list))
+;      nil
+;      (let [plushy (nth list index)]
+;        (if (= (:total-error plushy) 99999)
+;          plushy
+;          (recur (inc index)))))))
 
 ; solution threshold = 0.1 (for now)
 (defn gp
@@ -75,9 +75,9 @@
       (println "the best individual for this run is:")
       (prn best-individual)
       (println)
-      (if (some? (that_plushy evaluated-pop))
-        (do
-          (prn (that_plushy evaluated-pop))))
+      ;(if (some? (that_plushy evaluated-pop))
+      ;  (do
+      ;    (prn (that_plushy evaluated-pop))))
       (cond
         ;; Success on training cases is verified on testing cases
         (<= (:total-error best-individual) solution-error-threshold)

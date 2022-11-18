@@ -60,9 +60,10 @@
   or 1000000 if no behavior is produced. The behavior is here defined as the
   final top item on the INTEGER stack."
   ([argmap data individual]
-   (let [boolean_plushy (plushy-with-prob->plushy (:plushy individual))
-         regular_plushy (plushy-with-prob->plushy_2 boolean_plushy)
-         program (genome/plushy->push regular_plushy argmap)
+   (let [;boolean_plushy (plushy-with-prob->plushy (:plushy individual))
+         ;regular_plushy (plushy-with-prob->plushy_2 boolean_plushy)
+         ;program (genome/plushy->push regular_plushy argmap)
+         program (genome/plushy->push (:plushy individual) argmap)
          inputs (map (fn [x] (first (:input1 x))) data)
          correct-outputs (map (fn [x] (first (:output1 x))) data)
          outputs (map (fn [input]
@@ -83,9 +84,9 @@
        :behaviors outputs
        :errors errors
        :total-error #?(:clj  (apply +' errors)
-                       :cljs (apply + errors))
-       :boolean-plushy boolean_plushy
-       :program program))))
+                       :cljs (apply + errors))))))
+       ;:boolean-plushy boolean_plushy
+       ;:program program))))
 
 ;giant vectors of outputs and errors
 ;pick minimum total error
@@ -132,7 +133,7 @@
         (let [output   (gp/gp
                          (merge
                            {:instructions             instructions
-                            :error-function           multiple-evaluation-function
+                            :error-function           error-function
                             :training-data            (:train train-and-test-data)
                             :testing-data             nil
                             :max-generations          500
@@ -143,8 +144,8 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            ;:variation                {:umad 0.5 :crossover 0.5}
-                            :variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
+                            :variation                {:umad 0.5 :crossover 0.5}
+                            ;:variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
                             ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
