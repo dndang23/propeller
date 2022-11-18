@@ -100,7 +100,15 @@
         :else (recur (inc generation)
                      (if (:elitism argmap)
                        (conj (repeatedly (dec population-size)
-                                         #(variation/new-individual [(:program best-individual) (:min-program-boolean-plushy best-individual)] evaluated-pop argmap))
+                                         ; need to redo implementation
+                                         #(variation/new-individual evaluated-pop argmap))
                              (first evaluated-pop))
                        (repeatedly population-size
-                                   #(variation/new-individual [(:program best-individual) (:min-program-boolean-plushy best-individual)] evaluated-pop argmap))))))))
+                                   ; need to redo implementation
+                                   #(variation/new-individual evaluated-pop argmap))))))))
+
+
+; best program: (in_1 in_3)
+
+; probabilistic plushy ([in_1 p_1] [in_2 p_2] [in_3 p_3])
+; boolean plushy ([in_1 true] [in_2 false] [in_3 true])

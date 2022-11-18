@@ -15,15 +15,15 @@
 ;no testing set
 
 (def train-and-test-data
-  (let [train-inputs (range -1.0 0.9 0.1)]
+  (let [train-inputs (range -5.0 5.0 0.1)]
     {:train (map (fn [x] {:input1 (vector x) :output1 (vector (target-function x))}) train-inputs)}))
 
 ;(print (first (:train train-and-test-data)))
 
 (def instructions
-  (list 0
-        1
-        2
+  (list 0.0
+        1.0
+        2.0
         :in1
         :float_add
         :float_subtract
@@ -36,13 +36,12 @@
   [plushy-with-prob]
   ;(println plushy-with-prob)
   (filter identity (map (fn [[thing prob]]
-                          (if (< (rand) prob)
+                          (if (<= (rand) prob)
                             [thing true]
                             [thing false]))
                         plushy-with-prob)))
 
 ;(plushy-with-prob->plushy '([1 1] [:integer_add 1] [:integer_mult 1]))
-
 
 (defn plushy-with-prob->plushy_2
   [plushy-with-prob]
@@ -144,8 +143,9 @@
                             :parent-selection         :lexicase
                             :tournament-size          5
                             :umad-rate                0.1
-                            ;:variation                 {:umad 0.5 :crossover 0.5}
-                            :variation                {:umad-prob 0.30 :best-plushy-prob-mutation-prob 0.70 :crossover 0.0}
+                            ;:variation                {:umad 0.5 :crossover 0.5}
+                            :variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
+                            ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
                             :elitism                  false}
                            (apply hash-map (map #(if (string? %) (read-string %) %) args))))
               val  (if (nil? output)
