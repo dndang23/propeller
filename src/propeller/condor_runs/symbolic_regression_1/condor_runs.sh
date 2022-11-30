@@ -1,10 +1,11 @@
 #!/bin/sh
 
-num_1=${1}
-num_2=${2}
+val=${1}
+num_1=${2}
+num_2=${3}
 
-for i in {${num_1}..${num_2}}
+for (( i=${num_1}; i<=${num_2}; i++ ))
 do
-	condor_submit symbolic_regression_1_runs_${i}.cmd
+	condor_submit symbolic_regression_${val}_runs_${i}.cmd
         sleep 2
 done
