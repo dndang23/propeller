@@ -18,13 +18,15 @@
 ; creates a random plushy and then adds probability to each instruction
 (defn make-random-plushy
   "Creates and returns a new plushy."
-  [instructions max-initial-plushy-size]
+  [isDefault instructions max-initial-plushy-size]
   (let [plushy (repeatedly
                  (rand-int max-initial-plushy-size)
                  #(utils/random-instruction instructions))]
         ;prob-plushy (add-probability-to-plushy plushy)]
-;    prob-plushy))
-    plushy))
+        (if (= isDefault true)
+          plushy
+          (add-probability-to-plushy plushy))))
+;    plushy))
 
 ;(make-random-plushy (list :in1
 ;                          :integer_add

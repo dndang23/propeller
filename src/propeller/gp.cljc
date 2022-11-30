@@ -42,7 +42,7 @@
 ; solution threshold = 0.1 (for now)
 (defn gp
   "Main GP loop."
-  [{:keys [population-size max-generations error-function instructions
+  [{:keys [isDefault population-size max-generations error-function instructions
            max-initial-plushy-size solution-error-threshold mapper]
     :or   {solution-error-threshold 0.0
            ;; The `mapper` will perform a `map`-like operation to apply a function to every individual
@@ -61,7 +61,7 @@
   ;;
   (loop [generation 0
          population (mapper
-                      (fn [_] {:plushy (genome/make-random-plushy instructions max-initial-plushy-size)})
+                      (fn [_] {:plushy (genome/make-random-plushy isDefault instructions max-initial-plushy-size)})
                       (range population-size))]
     (let [evaluated-pop (sort-by :total-error
                                  (mapper
@@ -72,6 +72,8 @@
         ((:custom-report argmap) evaluated-pop generation argmap))
       ;(report evaluated-pop generation argmap))
       (println)
+      (println "Current generation:")
+      (println generation)
       (println "the best individual for this run is:")
       (prn best-individual)
       (println)

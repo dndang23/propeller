@@ -1,2 +1,2 @@
 #! /bin/sh
-lein run -m propeller.problems.symbolic_regression_1
+lein run -m propeller.problems.symbolic_regression_1 probabilistic
