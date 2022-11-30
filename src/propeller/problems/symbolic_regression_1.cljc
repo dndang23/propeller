@@ -170,8 +170,8 @@
                               :max-initial-plushy-size  100
                               :solution-error-threshold 0.1
                               :step-limit               200
-                              ;:parent-selection         :lexicase
-                              :parent-selection         :tournament
+                              :parent-selection         :lexicase
+                              ;:parent-selection         :tournament
                               :tournament-size          5
                               :umad-rate                0.1
                               :variation                {:umad 0.5 :crossover 0.5}
@@ -204,8 +204,8 @@
                               :max-initial-plushy-size  100
                               :solution-error-threshold 0.1
                               :step-limit               200
-                              ;:parent-selection         :lexicase
-                              :parent-selection         :tournament
+                              :parent-selection         :lexicase
+                              ;:parent-selection         :tournament
                               :tournament-size          5
                               :umad-rate                0.1
                               ;:variation                {:umad 0.5 :crossover 0.5}
