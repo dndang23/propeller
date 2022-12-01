@@ -162,7 +162,7 @@
           (let [output   (gp/gp
                            (merge
                              {:instructions             instructions
-                              :error-function           error-function
+                              :error-function           multiple-evaluation-function
                               :training-data            (:train train-and-test-data)
                               :testing-data             nil
                               :max-generations          500
@@ -170,15 +170,15 @@
                               :max-initial-plushy-size  100
                               :solution-error-threshold 0.1
                               :step-limit               200
-                              :parent-selection         :lexicase
-                              ;:parent-selection         :tournament
+                              ;:parent-selection         :lexicase
+                              :parent-selection         :tournament
                               :tournament-size          5
                               :umad-rate                0.1
-                              :variation                {:umad 0.5 :crossover 0.5}
-                              ;:variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
+                              ;:variation                {:umad 0.5 :crossover 0.5}
+                              :variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70}
                               ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
                               :elitism                  false
-                              :isDefault                true}
+                              :isDefault                false}
                              (apply hash-map (map #(if (string? %) (read-string %) %) args))))
                 val  (if (nil? output)
                        {:success-generation? 0 :num-generations 0}
@@ -209,7 +209,7 @@
                               :tournament-size          5
                               :umad-rate                0.1
                               ;:variation                {:umad 0.5 :crossover 0.5}
-                              :variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70}
+                              :variation                {:umad-prob 0.50 :adjusted-plushy-mutation-prob 0.50}
                               ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
                               :elitism                  false
                               :isDefault                false}

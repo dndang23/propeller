@@ -7,7 +7,7 @@ getenv = True
 executable  = symbolic_regression_3_run_6
 
 ## Job properties
-output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/2022-11-30-16/symbolic_regression_3/default/1/out
-error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/2022-11-30-16/symbolic_regression_3/default/1/err
-log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/2022-11-30-16/symbolic_regression_3/default/1/log
+output = /home/dndang23/cluster-scratch/propeller/src/propeller/results/2022-11-30-23/symbolic_regression_3/prob_tournament/1/out
+error  = /home/dndang23/cluster-scratch/propeller/src/propeller/results/2022-11-30-23/symbolic_regression_3/prob_tournament/1/err
+log    = /home/dndang23/cluster-scratch/propeller/src/propeller/results/2022-11-30-23/symbolic_regression_3/prob_tournament/1/log
 queue
