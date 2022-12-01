@@ -7,5 +7,5 @@ num_2=${3}
 for (( i=${num_1}; i<=${num_2}; i++ ))
 do
 	condor_submit symbolic_regression_${val}_runs_${i}.cmd
-        sleep 2
+        sleep 1
 done

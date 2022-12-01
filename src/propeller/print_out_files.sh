@@ -10,7 +10,7 @@ do
 		echo "(probabilistic) symbolic_regression_${i}, test ${j}"
 		sleep 1
 		cat results/${date}/symbolic_regression_${i}/prob/${j}/out
-		sleep 5
+		sleep 1
 	done
 done
 
@@ -24,7 +24,7 @@ do
 		echo "(default) symbolic_regression_${i}, test ${j}"
 		sleep 1
 		cat results/${date}/symbolic_regression_${i}/default/${j}/out
-		sleep 5
+		sleep 1
 	done
 done
 

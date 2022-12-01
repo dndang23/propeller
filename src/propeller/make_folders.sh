@@ -11,4 +11,6 @@ do
 	done
 done
 
+touch results/${date}/results.txt
+
 
