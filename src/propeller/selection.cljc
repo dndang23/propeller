@@ -50,6 +50,10 @@
                        survivors)
                (rest cases))))))
 
+(defn epsilon-lexicase-selection
+  [pop argmap]
+  0)
+
 (defn select-parent
   "Selects a parent from the population using the specified method."
   [pop argmap]
