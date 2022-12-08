@@ -10,7 +10,7 @@ do
 		echo "(probabilistic - lexicase) symbolic_regression_${i}, test ${j}"
 		sleep 1
 		cat results/${date}/symbolic_regression_${i}/prob_lexicase/${j}/out
-		sleep 1
+		sleep 5
 	done
 done
 
@@ -24,7 +24,7 @@ do
 		echo "(probabilistic - tournament) symbolic_regression_${i}, test ${j}"
 		sleep 1
 		cat results/${date}/symbolic_regression_${i}/prob_tournament/${j}/out
-		sleep 1
+		sleep 5
 	done
 done
 
