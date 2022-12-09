@@ -7,7 +7,7 @@ do
 	for j in {1..5}
 	do
 		mkdir -p results/${date}/symbolic_regression_${i}/prob_lexicase/${j}/
-		mkdir -p results/${date}/symbolic_regression_${i}/prob_tournament/${j}/
+		mkdir -p results/${date}/symbolic_regression_${i}/prob_epsilon_lexicase/${j}/
 	done
 done
 

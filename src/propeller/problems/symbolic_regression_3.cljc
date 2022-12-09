@@ -171,7 +171,7 @@
                               :solution-error-threshold 0.1
                               :step-limit               200
                               ;:parent-selection         :lexicase
-                              :parent-selection         :tournament
+                              :parent-selection         :epsilon-lexicase
                               :tournament-size          5
                               :umad-rate                0.1
                               ;:variation                {:umad 0.5 :crossover 0.5}
