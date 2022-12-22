@@ -8,9 +8,9 @@ do
 	for j in {1..5}
 	do
 		#echo "(probabilistic - lexicase) symbolic_regression_${i}, test ${j}"
-		sleep 0.1
-		#cat results/${date}/symbolic_regression_${i}/prob_lexicase/${j}/out
-		#sleep 3
+		#sleep 1
+		git add -f results/${date}/symbolic_regression_${i}/prob_lexicase/${j}/out
+		#sleep 1
 	done
 done
 
@@ -21,10 +21,10 @@ for i in {1..3}
 do
 	for j in {1..5}
 	do
-		echo "(probabilistic - epsilon-lexicase) symbolic_regression_${i}, test ${j}"
-		sleep 1
-		cat results/${date}/symbolic_regression_${i}/prob_epsilon_lexicase/${j}/out
-		sleep 3
+		#echo "(probabilistic - epsilon-lexicase) symbolic_regression_${i}, test ${j}"
+		#sleep 1
+		git add -f results/${date}/symbolic_regression_${i}/prob_tournament/${j}/out
+		#sleep 1
 	done
 done
 
