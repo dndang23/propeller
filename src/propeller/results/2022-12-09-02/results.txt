@@ -1,0 +1,7 @@
+Testing conducted: Compared lexicase and epsilon-lexicase selection with an increase of standard deviation in mutation method
+from 0.01 to 0.2
+
+Epsilon-lexicase selection seems to be on par with lexicase when running probabilistic plushy genomes
+
+Implement epsilon-lexicse selection to run more efficiently and perform the same comparison of
+lexicase selection v. epsilon-lexicsae selection using probabilistic plushy genomes

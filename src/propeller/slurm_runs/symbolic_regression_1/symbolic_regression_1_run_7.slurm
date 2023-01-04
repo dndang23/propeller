@@ -7,5 +7,5 @@
 #SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2022-12-28-14/symbolic_regression_1/prob_epsilon_lexicase/2/err
 #SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2022-12-28-14/symbolic_regression_1/prob_epsilon_lexicase/2/out
 
-lein run -m propeller.problems.symbolic_regression_1 default
+lein run -m propeller.problems.symbolic_regression_1 probabilistic-epsilon-lexicase
 

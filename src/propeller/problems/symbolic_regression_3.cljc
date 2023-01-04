@@ -11,14 +11,9 @@
   [x]
   (+ (* x x x x x x) (* -1 (* 2 x x x x)) (* x x)))
 
-;(range -1.0 0.9 0.1)
-;no testing set
-
 (def train-and-test-data
   (let [train-inputs (range -5.0 5.0 0.1)]
     {:train (map (fn [x] {:input1 (vector x) :output1 (vector (target-function x))}) train-inputs)}))
-
-;(print (first (:train train-and-test-data)))
 
 (def instructions
   (list 0.0
@@ -41,8 +36,6 @@
                             [thing false]))
                         plushy-with-prob)))
 
-;(plushy-with-prob->plushy '([1 1] [:integer_add 1] [:integer_mult 1]))
-
 (defn plushy-with-prob->plushy_2
   [plushy-with-prob]
   ;(println plushy-with-prob)
@@ -51,8 +44,6 @@
                             thing
                             nil))
                         plushy-with-prob)))
-
-;(plushy-with-prob->plushy_2 (plushy-with-prob->plushy '([1 0] [:integer_add 0] [:integer_mult 0])))
 
 (defn error-function
   "Finds the behaviors and errors of an individual. The error is the absolute
@@ -116,11 +107,9 @@
        :boolean-plushy boolean_plushy
        :program program))))
 
-;giant vectors of outputs and errors
-;pick minimum total error
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 5 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() min-program-boolean-plushy '()]
+  (loop [i 0 limit 10 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() min-program-boolean-plushy '()]
     (if (= i limit)
       (assoc individual
         :behaviors min_behaviors_list
@@ -158,7 +147,7 @@
       (do
         (println "Beginning run number" (inc num_tries))
         (println )
-        (if (= type "default")
+        (if (= type "probabilistic-epsilon-lexicase")
           (let [output   (gp/gp
                            (merge
                              {:instructions             instructions
@@ -227,6 +216,3 @@
             (prn {:list_of_successful_generations updated_list})
             (println )
             (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list)))))))
-
-;goal 1: run some tests on the probabilistic approach and see if it can solve the problem (print the final program)
-;goal 2: compare the performance with the standard approach

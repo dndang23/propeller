@@ -11,7 +11,8 @@
             [propeller.push.instructions.numeric]
             [propeller.push.instructions.polymorphic]
             [propeller.push.instructions.string]
-            [propeller.push.instructions.vector]))
+            [propeller.push.instructions.vector]
+            [propeller.selection :as selection]))
 
 (defn report
   "Reports information each generation."
@@ -29,17 +30,6 @@
                             :average-total-error   (float (/ (reduce + (map :total-error pop)) (count pop)))})
     (println)))
 
-;(defn that_plushy
-;  [list]
-;  (loop [index 0]
-;    (if (= index (count list))
-;      nil
-;      (let [plushy (nth list index)]
-;        (if (= (:total-error plushy) 99999)
-;          plushy
-;          (recur (inc index)))))))
-
-; solution threshold = 0.1 (for now)
 (defn gp
   "Main GP loop."
   [{:keys [isDefault population-size max-generations error-function instructions
@@ -67,7 +57,10 @@
                                  (mapper
                                    (partial error-function argmap (:training-data argmap))
                                    population))
-          best-individual (first evaluated-pop)]
+          best-individual (first evaluated-pop)
+          argmap (if (= (:parent-selection argmap) :epsilon-lexicase)
+                           (assoc argmap :epsilons (selection/epsilon-list evaluated-pop))
+                           argmap)]
       (if (:custom-report argmap)
         ((:custom-report argmap) evaluated-pop generation argmap))
       ;(report evaluated-pop generation argmap))
@@ -102,15 +95,7 @@
         :else (recur (inc generation)
                      (if (:elitism argmap)
                        (conj (repeatedly (dec population-size)
-                                         ; need to redo implementation
                                          #(variation/new-individual evaluated-pop argmap))
                              (first evaluated-pop))
                        (repeatedly population-size
-                                   ; need to redo implementation
                                    #(variation/new-individual evaluated-pop argmap))))))))
-
-
-; best program: (in_1 in_3)
-
-; probabilistic plushy ([in_1 p_1] [in_2 p_2] [in_3 p_3])
-; boolean plushy ([in_1 true] [in_2 false] [in_3 true])

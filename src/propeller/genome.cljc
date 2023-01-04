@@ -28,19 +28,6 @@
           (add-probability-to-plushy plushy))))
 ;    plushy))
 
-;(make-random-plushy (list :in1
-;                          :integer_add
-;                          :integer_subtract
-;                          :integer_mult
-;                          :integer_quot
-;                          :integer_eq
-;                          :exec_dup
-;                          :exec_if
-;                          'close
-;                          0
-;                          1)
- ;                   20)
-
 ; translates plushy with probability to regular plushy
 ; used to create a subset of plushy with probability
 ;(defn plushy-with-prob->plushy
