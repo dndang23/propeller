@@ -7,10 +7,10 @@ for i in {1..3}
 do
 	for j in {1..5}
 	do
-		#echo "(probabilistic - lexicase) symbolic_regression_${i}, test ${j}"
-		sleep 0.1
-		#cat results/${date}/symbolic_regression_${i}/prob_lexicase/${j}/out
-		#sleep 3
+		echo "(probabilistic - lexicase) symbolic_regression_${i}, test ${j}"
+		sleep 1
+		cat results/${date}/symbolic_regression_${i}/prob_lexicase/${j}/out
+		sleep 3
 	done
 done
 
