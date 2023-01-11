@@ -11,18 +11,18 @@
         count (count coll)]
     (if (pos? count)
       (/ sum (float count))
-      0)))
+      0.0)))
 
 (defn median [coll]
   (let [sorted (sort coll)
         cnt (count sorted)
         halfway (quot cnt 2.0)]
     (if (odd? cnt)
-      (nth sorted halfway) ; (1)
+      (nth sorted halfway)
       (let [bottom (dec halfway)
             bottom-val (nth sorted bottom)
             top-val (nth sorted halfway)]
-        (mean [bottom-val top-val]))))) ; (2)
+        (mean [bottom-val top-val])))))
 
 (defn median-absolute-deviation
   [coll]
