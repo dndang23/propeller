@@ -2,14 +2,14 @@
 
 date=$1
 
-echo "Probabilistic plushy (lexicase selection) output"
-for i in {1..3}
+echo "Default plushy (epsilon-lexicase selection) output"
+for i in {3..3}
 do
-	for j in {1..5}
+	for j in {1..100}
 	do
-		echo "(probabilistic - lexicase) symbolic_regression_${i}, test ${j}"
-		sleep 1
-		cat results/${date}/symbolic_regression_${i}/prob_lexicase/${j}/out
+		echo "(default - epsilon-lexicase) symbolic_regression_${i}, test ${j}"
+		sleep 2
+		cat /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/default_epsilon_lexicase/${j}/out
 		sleep 3
 	done
 done
@@ -17,13 +17,14 @@ done
 echo ""
 
 echo "Probabilistic plushy (epsilon-lexicase selection) output"
-for i in {1..3}
+sleep 5
+for i in {3..3}
 do
-	for j in {1..5}
+	for j in {1..100}
 	do
 		echo "(probabilistic - epsilon-lexicase) symbolic_regression_${i}, test ${j}"
-		sleep 1
-		cat results/${date}/symbolic_regression_${i}/prob_epsilon_lexicase/${j}/out
+		sleep 2
+		cat /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/prob_epsilon_lexicase/${j}/out
 		sleep 3
 	done
 done
