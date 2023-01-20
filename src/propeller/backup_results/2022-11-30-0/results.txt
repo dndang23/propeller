@@ -1,0 +1,5 @@
+Testing Conducted: Tournament selection on probabilistic plushy and default plushy genomes
+
+It seems Propeller struggled more in solving symbolic_regression_2 and symbolic_regression_3 when using tournament
+selection as opposed to lexicase selection. The test will use lexicase again and see if is there a difference in
+success rate.

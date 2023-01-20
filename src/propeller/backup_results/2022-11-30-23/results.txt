@@ -1,0 +1,4 @@
+Testing conducted: default plushy and probabilistic plushy with 50% UMAD and 50% adjusted probability mutation
+
+It seems that increasing percentage of UMAD increased the success rate and lowered the average number of generations for
+sucess.

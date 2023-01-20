@@ -133,12 +133,16 @@
          regular_plushy (plushy-with-prob->plushy_2 boolean_plushy)
          program (genome/plushy->push regular_plushy argmap)
          inputs (map (fn [x] (first (:input1 x))) data)
-         correct-outputs (map (fn [x] (first (:output1 x))) data)
+         correct-outputs (map (fn [x] (:output1 x)) data)
          outputs (map (fn [input]
                         (state/peek-stack
                           (interpreter/interpret-program
                             program
-                            (assoc state/empty-state :input {:in1 input})
+                            (assoc state/empty-state :input {:in1 (nth input 0)
+                                                             :in2 (nth input 1)
+                                                             :in3 (nth input 2)
+                                                             :in4 (nth input 3)
+                                                             :in5 (nth input 4)})
                             (:step-limit argmap))
                           :float))
                       inputs)

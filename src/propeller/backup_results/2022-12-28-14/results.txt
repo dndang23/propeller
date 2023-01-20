@@ -1,0 +1,4 @@
+Testing conducted: Compared lexicase and epsilon-lexicase selection with an increase of standard deviation in mutation method
+from 0.01 to 0.2 and an increase of the number of evaluations performed per plushy genome to 10
+
+Need to rerun tests with an higher running time limit

@@ -1,0 +1,8 @@
+Testing conducted: Compared lexicase and tournament selection with an increase of standard deviation in mutation method
+from 0.01 to 0.2
+
+Both versions outputted a solution in a fewer number of generations with lexicase having a higher success rate than
+tournament for all three symbolic regression problems.
+
+Plan to implement epsilon-lexicase selection and test with it
+For now I will conduct additional runs on lexicase and tournament selection with standard deviation of 0.2
