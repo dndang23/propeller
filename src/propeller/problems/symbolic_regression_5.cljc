@@ -132,7 +132,7 @@
    (let [boolean_plushy (plushy-with-prob->plushy (:plushy individual))
          regular_plushy (plushy-with-prob->plushy_2 boolean_plushy)
          program (genome/plushy->push regular_plushy argmap)
-         inputs (map (fn [x] (first (:input1 x))) data)
+         inputs (map (fn [i] (map-vals-input i)) data)
          correct-outputs (map (fn [x] (:output1 x)) data)
          outputs (map (fn [input]
                         (state/peek-stack

@@ -4,7 +4,7 @@
 #SBATCH --ntasks=8
 #SBATCH --account=dndang23
 #SBATCH --partition=gpu-a100-q
-#SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-01-18-06/symbolic_regression_5/prob_epsilon_lexicase/41/err
-#SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-01-18-06/symbolic_regression_5/prob_epsilon_lexicase/41/out
+#SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-01-19-19/symbolic_regression_5/prob_epsilon_lexicase/41/err
+#SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-01-19-19/symbolic_regression_5/prob_epsilon_lexicase/41/out
 
 lein run -m propeller.problems.symbolic_regression_5 probabilistic-epsilon-lexicase

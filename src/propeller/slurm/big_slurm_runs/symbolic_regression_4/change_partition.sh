@@ -8,7 +8,7 @@ cd default
 
 for (( i=${num_1}; i<=${num_2}; i++ ))
 do
-	sed -i -e 's/2023-01-09-22/2023-01-18-06/g' symbolic_regression_${val}_run_${i}.slurm
+	sed -i -e 's/2023-01-18-06/2023-01-19-19/g' symbolic_regression_${val}_run_${i}.slurm
         #sleep 1
 done
 
@@ -18,7 +18,7 @@ cd probabilistic
 
 for (( i=${num_1}; i<=${num_2}; i++ ))
 do
-	sed -i -e 's/2023-01-09-22/2023-01-18-06/g' symbolic_regression_${val}_run_${i}.slurm 
+	sed -i -e 's/2023-01-18-06/2023-01-19-19/g' symbolic_regression_${val}_run_${i}.slurm
 	#sleep 1
 done
 

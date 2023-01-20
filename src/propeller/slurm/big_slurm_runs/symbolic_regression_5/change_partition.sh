@@ -8,7 +8,7 @@ cd default
 
 for (( i=${num_1}; i<=${num_2}; i++ ))
 do
-	sed -i -e 's/symbolic_regression_4/symbolic_regression_5/g' symbolic_regression_${val}_run_${i}.slurm
+	sed -i -e 's/gpu-a5000-q/gpu-a100-q/g' symbolic_regression_${val}_run_${i}.slurm
         #sleep 1
 done
 
@@ -18,7 +18,7 @@ cd probabilistic
 
 for (( i=${num_1}; i<=${num_2}; i++ ))
 do
-	sed -i -e 's/symbolic_regression_4/symbolic_regression_5/g' symbolic_regression_${val}_run_${i}.slurm 
+	sed -i -e 's/gpu-a5000-q/gpu-a100-q/g' symbolic_regression_${val}_run_${i}.slurm
 	#sleep 1
 done
 
