@@ -81,7 +81,13 @@
             (println "The best individual according to the genetic program is:")
             (println best-individual)
             (println)
-            {:success-generation generation})
+            (if (= isDefault true)
+              (do (prn {:total-test-error
+                        (:total-error (error-function argmap (:testing-data argmap) best-individual))})
+                  {:success-generation generation})
+              (do (prn {:total-test-error
+                        (:total-error (error-function argmap (:testing-data argmap) {:plushy (genome/plushy-with-prob->plushy_2 (:min-program-boolean-plushy best-individual))}))})
+                  {:success-generation generation})))
         ;(do (prn {:success-generation generation})
         ;(prn {:total-test-error
         ;      (:total-error (error-function argmap (:testing-data argmap) best-individual))})

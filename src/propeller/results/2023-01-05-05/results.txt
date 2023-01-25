@@ -1,0 +1,7 @@
+Testing conducted: Compared lexicase and epsilon-lexicase selection with an increase of standard deviation in mutation method
+from 0.01 to 0.2 and an increase of the number of evaluations performed per plushy genome to 10
+
+Results: Propeller performed better using regular Plushy genomes than with Probabilistic Plushies. Also, epsilon-lexicase selection
+seemed to improve the Propeller's success rate on these problems when it had to use Probabilistic Plushies
+
+Future work: Rerun the same experiment as a sanity check

@@ -26,6 +26,24 @@
         (if (= isDefault true)
           plushy
           (add-probability-to-plushy plushy))))
+
+(defn plushy-with-prob->plushy
+  [plushy-with-prob]
+  ;(println plushy-with-prob)
+  (filter identity (map (fn [[thing prob]]
+                          (if (<= (rand) prob)
+                            [thing true]
+                            [thing false]))
+                        plushy-with-prob)))
+
+(defn plushy-with-prob->plushy_2
+  [plushy-with-prob]
+  ;(println plushy-with-prob)
+  (filter identity (map (fn [[thing boolean]]
+                          (if (= boolean true)
+                            thing
+                            nil))
+                        plushy-with-prob)))
 ;    plushy))
 
 ; translates plushy with probability to regular plushy

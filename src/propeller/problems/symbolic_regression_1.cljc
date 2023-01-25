@@ -27,23 +27,6 @@
         :float_cos
         :float_sin))
 
-(defn plushy-with-prob->plushy
-  [plushy-with-prob]
-  ;(println plushy-with-prob)
-  (filter identity (map (fn [[thing prob]]
-                          (if (<= (rand) prob)
-                            [thing true]
-                            [thing false]))
-                        plushy-with-prob)))
-
-(defn plushy-with-prob->plushy_2
-  [plushy-with-prob]
-  ;(println plushy-with-prob)
-  (filter identity (map (fn [[thing boolean]]
-                          (if (= boolean true)
-                            thing
-                            nil))
-                        plushy-with-prob)))
 
 (defn error-function
   "Finds the behaviors and errors of an individual. The error is the absolute
@@ -80,8 +63,8 @@
   or 1000000 if no behavior is produced. The behavior is here defined as the
   final top item on the INTEGER stack."
   ([argmap data individual]
-   (let [boolean_plushy (plushy-with-prob->plushy (:plushy individual))
-         regular_plushy (plushy-with-prob->plushy_2 boolean_plushy)
+   (let [boolean_plushy (genome/plushy-with-prob->plushy (:plushy individual))
+         regular_plushy (genome/plushy-with-prob->plushy_2 boolean_plushy)
          program (genome/plushy->push regular_plushy argmap)
          inputs (map (fn [x] (first (:input1 x))) data)
          correct-outputs (map (fn [x] (first (:output1 x))) data)
