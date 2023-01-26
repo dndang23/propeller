@@ -1,0 +1,8 @@
+Testing conducted: Compared Propeller performance using regular Plushy versus Probabilistic Plushy with epsilon-lexicase on new symbolic regression problems
+
+Results: symbolic_regression_4: Propeller performed had a much higher success rate using Probabilistic Plushies than with regular Plushies
+         symbolic_regression_9: Propeller performed a little better using Probabilistic Plushies than with regular Plushies
+         symbolic_regression_10: Propeller performed bad using both versions of Plushy genomes
+         symbolic_regression_11: Propeller performed bad but a tad bit better using Probabilistic Plushies than with regular Plushies
+
+Future work: Run more symbolic regression problems that Propeller is better at solving using Probabilistic Plushies than with when using regular Plushies

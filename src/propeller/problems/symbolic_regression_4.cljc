@@ -7,7 +7,7 @@
             #?(:cljs [cljs.reader :refer [read-string]])))
 
 (defn- target-function
-  "Target function: f(x) = (1+ x^3)^3 + 1"
+  "Target function: f(x) = (1 + x^3)^3 + 1"
   [x]
   (inc (* (inc (* x x x)) (inc (* x x x)) (inc (* x x x)))))
 

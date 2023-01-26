@@ -1,0 +1,5 @@
+Testing conducted: Compared Propeller performance using regular Plushy versus Probabilistic Plushy with epsilon-lexicase on new symbolic regression problems
+
+Results: Inconclusive as jobs had to be canceled due to incorrect use of the GPU cluster
+
+Future work: Need to find more symbolic regression problems that Propeller struggle with when using regular Plushies and run jobs on the CPU cluster
