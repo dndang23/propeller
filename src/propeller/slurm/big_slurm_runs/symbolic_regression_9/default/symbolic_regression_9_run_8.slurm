@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --account=dndang23
-#SBATCH --partition=cpu
+#SBATCH --partition=cpu-q
 #SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-01-24-20/symbolic_regression_9/default_epsilon_lexicase/8/err
 #SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-01-24-20/symbolic_regression_9/default_epsilon_lexicase/8/out
 

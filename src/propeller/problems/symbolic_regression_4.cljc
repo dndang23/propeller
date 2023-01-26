@@ -137,6 +137,7 @@
                            (merge
                              {:instructions             instructions
                               :error-function           multiple-evaluation-function
+                              :error-function_2         error-function
                               :training-data            (:train train-and-test-data)
                               :testing-data             (:test train-and-test-data)
                               :max-generations          500
@@ -171,6 +172,7 @@
                            (merge
                              {:instructions             instructions
                               :error-function           error-function
+                              :error-function_2         nil
                               :training-data            (:train train-and-test-data)
                               :testing-data             (:test train-and-test-data)
                               :max-generations          500

@@ -2,7 +2,7 @@
 
 date=$1
 
-for i in {4..7}
+for i in {8..10}
 do
 	for j in {1..100}
 	do

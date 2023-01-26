@@ -32,7 +32,7 @@
 
 (defn gp
   "Main GP loop."
-  [{:keys [isDefault population-size max-generations error-function instructions
+  [{:keys [isDefault population-size max-generations error-function error-function_2 instructions
            max-initial-plushy-size solution-error-threshold mapper]
     :or   {solution-error-threshold 0.0
            ;; The `mapper` will perform a `map`-like operation to apply a function to every individual
@@ -86,7 +86,7 @@
                         (:total-error (error-function argmap (:testing-data argmap) best-individual))})
                   {:success-generation generation})
               (do (prn {:total-test-error
-                        (:total-error (error-function argmap (:testing-data argmap) {:plushy (genome/plushy-with-prob->plushy_2 (:min-program-boolean-plushy best-individual))}))})
+                        (:total-error (error-function_2 argmap (:testing-data argmap) {:plushy (genome/plushy-with-prob->plushy_2 (:min-program-boolean-plushy best-individual))}))})
                   {:success-generation generation})))
         ;(do (prn {:success-generation generation})
         ;(prn {:total-test-error
