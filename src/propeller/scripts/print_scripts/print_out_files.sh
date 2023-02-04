@@ -12,6 +12,7 @@ end_prob=$8
 echo "Default plushy (epsilon-lexicase selection) output"
 #for i in {5..5}
 #do
+counter=0
 for (( i=$num; i<=$num; i++ ))
 do
 	for (( j=$start_default; j<=$end_default; j++ ))
@@ -32,7 +33,8 @@ do
 				test_error_num=`cat /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/default_epsilon_lexicase/${j}/out | grep total-test-error`
 				echo ${test_error_num}
 				
-				sleep ${num_seconds_2}
+				((counter=counter+1))
+				#sleep ${num_seconds_2}
 			fi
 
 		fi
@@ -41,8 +43,12 @@ do
 	done
 done
 
+echo "Num successes for default epsilon-lexicase selection = ${counter}"
+echo ""
+echo ""
 echo ""
 
+counter_2=0
 echo "Probabilistic plushy (epsilon-lexicase selection) output"
 #sleep 5
 #for i in {5..5}
@@ -64,8 +70,8 @@ do
 				echo ${gen_num}
 				test_error_num=`cat /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/prob_epsilon_lexicase/${j}/out | grep total-test-error`
 				echo ${test_error_num}
-				
-				sleep ${num_seconds_2}
+				((counter_2=counter_2+1))
+				#sleep ${num_seconds_2}
 			fi
 		fi
 
@@ -73,4 +79,5 @@ do
 	done
 done
 
+echo "Num successes for probabilistic epsilon-lexicase selection = ${counter_2}"
 echo "Fin"

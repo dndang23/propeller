@@ -1,8 +1,10 @@
 #!/bin/sh
 
 date=$1
+START=$2
+END=$3
 
-for i in {8..10}
+for (( i=${START}; i<=${END}; i++ ))
 do
 	for j in {1..100}
 	do
