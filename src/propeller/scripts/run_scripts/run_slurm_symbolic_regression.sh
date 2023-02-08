@@ -1,13 +1,16 @@
 #!/bin/sh
 
+num_1=$1
+num_2=$2
+
 cd ..
 cd ..
 cd slurm
 
-#for i in {1..3}
-#do
-cd big_slurm_runs/symbolic_regression_${1}
-./slurm_runs.sh ${1} 1 100
+for (( i=${num_1}; i<=${num_2}; i++ ))
+do
+cd big_slurm_runs/equal_resources/symbolic_regression_${i}
+./slurm_runs.sh ${i} 1 100
 cd ..
 cd ..
-#done
+done

@@ -168,39 +168,76 @@
             (prn {:list_of_successful_generations updated_list})
             (println )
             (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list))
-          (let [output   (gp/gp
-                           (merge
-                             {:instructions             instructions
-                              :error-function           error-function
-                              :error-function_2         nil
-                              :training-data            (:train train-and-test-data)
-                              :testing-data             (:test train-and-test-data)
-                              :max-generations          500
-                              :population-size          500
-                              :max-initial-plushy-size  100
-                              :solution-error-threshold 0.1
-                              :step-limit               200
-                              :parent-selection         :epsilon-lexicase
-                              ;:parent-selection         :tournament
-                              :tournament-size          5
-                              :umad-rate                0.1
-                              ;:variation                {:umad 0.5 :crossover 0.5}
-                              :variation                {:umad 1.0}
-                              ;:variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
-                              ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
-                              :elitism                  false
-                              :isDefault                true}
-                             (apply hash-map (map #(if (string? %) (read-string %) %) args))))
-                val  (if (nil? output)
-                       {:success-generation? 0 :num-generations 0}
-                       {:success-generation? 1 :num-generations (:success-generation output)})
-                updated_list (if (nil? output)
-                               generations_list
-                               (conj generations_list (:success-generation output)))]
-            (println "Statistics based on current number of runs: ")
-            (prn {:num_successes (+ num_successes (:success-generation? val))})
-            (prn {:num_tries (inc num_tries)})
-            (prn {:total_num_generations (+ num_generations (:num-generations val))})
-            (prn {:list_of_successful_generations updated_list})
-            (println )
-            (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list)))))))
+          (if (= type "default-epsilon-lexicase-increased-generationss")
+            (let [output   (gp/gp
+                             (merge
+                               {:instructions             instructions
+                                :error-function           error-function
+                                :error-function_2         nil
+                                :training-data            (:train train-and-test-data)
+                                :testing-data             (:test train-and-test-data)
+                                :max-generations          5000
+                                :population-size          500
+                                :max-initial-plushy-size  100
+                                :solution-error-threshold 0.1
+                                :step-limit               200
+                                :parent-selection         :epsilon-lexicase
+                                ;:parent-selection         :tournament
+                                :tournament-size          5
+                                :umad-rate                0.1
+                                ;:variation                {:umad 0.5 :crossover 0.5}
+                                :variation                {:umad 1.0}
+                                ;:variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
+                                ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
+                                :elitism                  false
+                                :isDefault                true}
+                               (apply hash-map (map #(if (string? %) (read-string %) %) args))))
+                  val  (if (nil? output)
+                         {:success-generation? 0 :num-generations 0}
+                         {:success-generation? 1 :num-generations (:success-generation output)})
+                  updated_list (if (nil? output)
+                                 generations_list
+                                 (conj generations_list (:success-generation output)))]
+              (println "Statistics based on current number of runs: ")
+              (prn {:num_successes (+ num_successes (:success-generation? val))})
+              (prn {:num_tries (inc num_tries)})
+              (prn {:total_num_generations (+ num_generations (:num-generations val))})
+              (prn {:list_of_successful_generations updated_list})
+              (println )
+              (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list))
+            (let [output   (gp/gp
+                             (merge
+                               {:instructions             instructions
+                                :error-function           error-function
+                                :error-function_2         nil
+                                :training-data            (:train train-and-test-data)
+                                :testing-data             (:test train-and-test-data)
+                                :max-generations          500
+                                :population-size          5000
+                                :max-initial-plushy-size  100
+                                :solution-error-threshold 0.1
+                                :step-limit               200
+                                :parent-selection         :epsilon-lexicase
+                                ;:parent-selection         :tournament
+                                :tournament-size          5
+                                :umad-rate                0.1
+                                ;:variation                {:umad 0.5 :crossover 0.5}
+                                :variation                {:umad 1.0}
+                                ;:variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
+                                ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
+                                :elitism                  false
+                                :isDefault                true}
+                               (apply hash-map (map #(if (string? %) (read-string %) %) args))))
+                  val  (if (nil? output)
+                         {:success-generation? 0 :num-generations 0}
+                         {:success-generation? 1 :num-generations (:success-generation output)})
+                  updated_list (if (nil? output)
+                                 generations_list
+                                 (conj generations_list (:success-generation output)))]
+              (println "Statistics based on current number of runs: ")
+              (prn {:num_successes (+ num_successes (:success-generation? val))})
+              (prn {:num_tries (inc num_tries)})
+              (prn {:total_num_generations (+ num_generations (:num-generations val))})
+              (prn {:list_of_successful_generations updated_list})
+              (println )
+              (recur (inc num_tries) (+ num_successes (:success-generation? val)) (+ num_generations (:num-generations val)) updated_list))))))))
