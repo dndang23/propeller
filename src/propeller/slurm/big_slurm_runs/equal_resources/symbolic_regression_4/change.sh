@@ -11,7 +11,7 @@ new=${6}
 for (( i=${num_1}; i<=${num_2}; i++ ))
 do
 	
-	sed -i -e "s/${prev}/${new}/g" ${dir}/symbolic_regression_${val}_run_${i}.slurm
+	sed -i -e "s#${prev}#${new}#g" ${dir}/symbolic_regression_${val}_run_${i}.slurm
 	#sleep 1
 done
 

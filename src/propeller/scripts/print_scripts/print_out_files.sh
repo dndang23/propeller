@@ -1,19 +1,28 @@
 #!/bin/sh
 
-num=$1
-date=$2
-dir=$3
-num_seconds=$4
-num_seconds_2=$5
-start_default=$6
-end_default=$7
-start_prob=$8
-end_prob=$9
+date=$1
+num_seconds=$2
+num_seconds_2=$3
+start_default=$4
+end_default=$5
+num=$6
+dir=$7
+#start_prob=$8
+#end_prob=$9
+
+if [ "${dir}" == "p"  ]; then
+	dir="prob_epsilon_lexicase"
+elif [ "${dir}" == "d_g" ]; then
+	dir="default_epsilon_lexicase_increased_generations"
+else
+	dir="default_epsilon_lexicase_increased_population"	
+fi	
 
 echo "Plushy (epsilon-lexicase selection) output"
 #for i in {5..5}
 #do
 counter=0
+counter_2=0
 for (( i=$num; i<=$num; i++ ))
 do
 	for (( j=$start_default; j<=$end_default; j++ ))
@@ -26,6 +35,7 @@ do
 		if [ -z "${gen_num}" ]
 		then
 			echo "symbolic_regression_${i}, test ${j} is not finished"
+			((counter_2=counter_2+1))
 			sleep ${num_seconds}
 		else
 			if [[ "${gen_num}" != *"-1"* ]]; then
@@ -45,6 +55,7 @@ do
 done
 
 echo "Num successes for ${dir} = ${counter}"
+echo "${counter_2} runs left"
 #echo ""
 #echo ""
 #echo ""

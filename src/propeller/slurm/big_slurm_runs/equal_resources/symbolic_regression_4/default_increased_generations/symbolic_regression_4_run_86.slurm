@@ -7,4 +7,4 @@
 #SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-07-14/symbolic_regression_4/default_epsilon_lexicase_increased_generations/86/err
 #SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-07-14/symbolic_regression_4/default_epsilon_lexicase_increased_generations/86/out
 
-lein run -m propeller.problems.symbolic_regression_4 default-epsilon-lexicase-increased-generations
+/home/dndang23/Desktop/propeller_dir/propeller/src/propeller/temp_lein/lein run -m propeller.problems.symbolic_regression_4 default-epsilon-lexicase-increased-generations

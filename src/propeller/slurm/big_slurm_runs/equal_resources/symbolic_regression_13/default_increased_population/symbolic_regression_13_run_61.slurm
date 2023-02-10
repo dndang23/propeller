@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --account=dndang23
 #SBATCH --partition=cpu-q
-#SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-07-14/symbolic_regression_13/default_epsilon_increased_lexicase_increased_population/61/err
-#SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-07-14/symbolic_regression_13/default_epsilon_increased_lexicase_increased_population/61/out
+#SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-07-14/symbolic_regression_13/default_epsilon_lexicase_increased_population/61/err
+#SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-07-14/symbolic_regression_13/default_epsilon_lexicase_increased_population/61/out
 
-lein run -m propeller.problems.symbolic_regression_13 default-epsilon-lexicase-increased-population
+/home/dndang23/Desktop/propeller_dir/propeller/src/propeller/temp_lein/lein run -m propeller.problems.symbolic_regression_13 default-epsilon-lexicase-increased-population

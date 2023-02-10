@@ -13,4 +13,5 @@ cd big_slurm_runs/equal_resources/symbolic_regression_${i}
 ./slurm_runs.sh ${i} 1 100
 cd ..
 cd ..
+cd ..
 done
