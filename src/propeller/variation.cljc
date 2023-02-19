@@ -189,8 +189,8 @@
         (let [cur-plushy (nth plushy i)
               cur-min-program-boolean-plushy (nth min-program-boolean-plushy i)]
           (if (= (last cur-min-program-boolean-plushy) true)
-            (recur (dec i) (conj new-plushy [(first cur-plushy) (perturb-with-positive-gaussian-noise 0.2 (last cur-plushy))]))
-            (recur (dec i) (conj new-plushy [(first cur-plushy) (perturb-with-negative-gaussian-noise 0.2 (last cur-plushy))]))))))))
+            (recur (dec i) (conj new-plushy [(first cur-plushy) (perturb-with-positive-gaussian-noise 0.3 (last cur-plushy))]))
+            (recur (dec i) (conj new-plushy [(first cur-plushy) (perturb-with-negative-gaussian-noise 0.3 (last cur-plushy))]))))))))
 
 ;(defn best-plushy-prob-mutation
 ;  [plushy]
