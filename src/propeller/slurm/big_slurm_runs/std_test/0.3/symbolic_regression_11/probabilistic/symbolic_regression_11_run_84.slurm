@@ -6,5 +6,6 @@
 #SBATCH --partition=cpu-q
 #SBATCH -e /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-19-05/symbolic_regression_11/prob_epsilon_lexicase/84/err
 #SBATCH -o /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/2023-02-19-05/symbolic_regression_11/prob_epsilon_lexicase/84/out
+ml amh-clojure
 
 lein run -m propeller.problems.symbolic_regression_11 probabilistic-epsilon-lexicase

@@ -14,4 +14,5 @@ cd big_slurm_runs/std_test/0.3/symbolic_regression_${i}
 cd ..
 cd ..
 cd ..
+cd ..
 done
