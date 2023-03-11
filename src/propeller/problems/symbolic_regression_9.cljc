@@ -24,9 +24,7 @@
         :float_mult
         :float_quot
         :float_eq
-        :exec_dup
-        :exec_if
-        'close
+        :float_dup
         0.0
         1.0))
 
@@ -94,7 +92,7 @@
 
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 10 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() min-program-boolean-plushy '()]
+  (loop [i 0 limit 5 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() min-program-boolean-plushy '()]
     (if (= i limit)
       (assoc individual
         :behaviors min_behaviors_list
@@ -176,7 +174,7 @@
                                 :error-function_2         nil
                                 :training-data            (:train train-and-test-data)
                                 :testing-data             (:test train-and-test-data)
-                                :max-generations          5000
+                                :max-generations          2500
                                 :population-size          500
                                 :max-initial-plushy-size  100
                                 :solution-error-threshold 0.1
@@ -213,7 +211,7 @@
                                 :training-data            (:train train-and-test-data)
                                 :testing-data             (:test train-and-test-data)
                                 :max-generations          500
-                                :population-size          5000
+                                :population-size          2500
                                 :max-initial-plushy-size  100
                                 :solution-error-threshold 0.1
                                 :step-limit               200

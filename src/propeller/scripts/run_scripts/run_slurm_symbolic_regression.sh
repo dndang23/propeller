@@ -9,9 +9,8 @@ cd slurm
 
 for (( i=${num_1}; i<=${num_2}; i++ ))
 do
-cd big_slurm_runs/std_test/0.3/symbolic_regression_${i}
+cd big_slurm_runs/equal_resources_3/symbolic_regression_${i}
 ./slurm_runs.sh ${i} 1 100
-cd ..
 cd ..
 cd ..
 cd ..

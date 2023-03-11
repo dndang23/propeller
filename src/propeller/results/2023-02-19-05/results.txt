@@ -1,0 +1,5 @@
+Testing conducted: Increased standard deviation in adjusted mutation method from 0.2 to 0.3
+
+Results: Propeller overall appeared to have less success in solving symbolic regression problems
+
+Future work: Run with 5 evaluations in multiple evaluations method in Probabalistic Plushy. After that, repeat the same experimenth with 2 evaluations and 1 evaluations. Then, do more experiments on different amounts of UMAD and adjusted mutation method used (currently the plan is to use 20% UMAD and 80% adjusted mutation method). After that, do more investigation on the maximum size allowed in creating a probabilistic plushy.
