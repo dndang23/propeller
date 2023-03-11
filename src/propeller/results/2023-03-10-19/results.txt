@@ -1,0 +1,5 @@
+Testing conducted: Run with 5 evaluations in multiple evaluations method in Probabalistic Plushy.
+
+Results: Non-probabilistic Propeller still performed better than probabilistic Propeller. It appears that the new instruction set allowed both versions of Propeller to improve in successes across all problems
+
+Future work: Will run the same experiment with a higher percentage of umad and a lower percentage of adjusted mutation
