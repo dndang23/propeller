@@ -25,7 +25,9 @@
         :float_mult
         :float_quot
         :float_eq
-        :float_dup
+        :exec_dup
+        :exec_if
+        'close
         0.0
         1.0))
 
