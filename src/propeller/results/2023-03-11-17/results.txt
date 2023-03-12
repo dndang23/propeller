@@ -1,0 +1,5 @@
+Testing conducted: Ran with 5 evaluations per Probabilistic Plushy with a variation rate of 20% UMAD and 80% adjusted mutation method.
+
+Results: Non-probabilistic Propeller performed about the same as last time Probabilistic Propeller performed better with the new variation rate.
+
+Future work: Will rerun experiment with a the old instruciton set. I think that Probabilistic Propeller will performed better than the non-probabilistic version because it has a chanec to eliminate bad instructions through its expressions.  
