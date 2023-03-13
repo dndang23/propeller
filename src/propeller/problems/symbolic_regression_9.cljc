@@ -24,9 +24,7 @@
         :float_mult
         :float_quot
         :float_eq
-        :exec_dup
-        :exec_if
-        'close
+        :float_dup
         0.0
         1.0))
 
@@ -142,7 +140,7 @@
                               :testing-data             (:test train-and-test-data)
                               :max-generations          500
                               :population-size          500
-                              :max-initial-plushy-size  100
+                              :max-initial-plushy-size  150
                               :solution-error-threshold 0.1
                               :step-limit               200
                               ;:parent-selection         :lexicase
