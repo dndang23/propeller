@@ -1,0 +1,5 @@
+Testing conducted: Ran with 5 evaluations per Probabilistic Plushy with a variation rate of 20% UMAD and 80% adjusted mutation method using the old instruction set
+
+Results: Non-probabilistic Propeller performed better on some of the regression problems. Both versions of Propeller had lower sucess rates with these problems.
+
+Future work: Will rerun experiment with the new instruction set but with a increased maximum plushy size. I think that the expressions by the probabilistic reduce the size of the non-probabilistic and so by increasing them, the expressed probabilistic plushies can have more instructions to work with.  
