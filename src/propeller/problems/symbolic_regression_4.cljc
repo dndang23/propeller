@@ -26,7 +26,9 @@
         :float_mult
         :float_quot
         :float_eq
-        :float_dup
+        :exec_dup
+        :exec_if
+        'close
         0.0
         1.0))
 
@@ -142,7 +144,7 @@
                               :testing-data             (:test train-and-test-data)
                               :max-generations          500
                               :population-size          500
-                              :max-initial-plushy-size  150
+                              :max-initial-plushy-size  100
                               :solution-error-threshold 0.1
                               :step-limit               200
                               ;:parent-selection         :lexicase
@@ -150,7 +152,7 @@
                               :tournament-size          5
                               :umad-rate                0.1
                               ;:variation                {:umad 0.5 :crossover 0.5}
-                              :variation                {:umad-prob 0.20 :adjusted-plushy-mutation-prob 0.80}
+                              :variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70}
                               ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
                               :elitism                  false
                               :isDefault                false}
