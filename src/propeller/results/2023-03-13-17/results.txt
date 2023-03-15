@@ -1,0 +1,5 @@
+Testing conducted: Ran with 5 evaluations per Probabilistic Plushy with a variation rate of 20% UMAD and 80% adjusted mutation method using the new instruction set with a increased maximum plushy size. 
+
+Results: Probabilistic Propeller did not improve in performance. Speculation about the chance it will due to an increase maximum plushy size did not occur.
+
+Future work: Will rerun experiment with the old instruction set. Believe multiple expressions will allow probabilistic plushies to remove 'bad instructions' when expression to Push programs.
