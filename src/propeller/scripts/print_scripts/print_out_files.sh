@@ -11,9 +11,11 @@ dir=$7
 #end_prob=$9
 
 if [ "${dir}" == "p"  ]; then
-	dir="prob_epsilon_lexicase"
+	dir="prob"
+#	dir="prob_epsilon_lexicase"
 elif [ "${dir}" == "d_g" ]; then
-	dir="default_epsilon_lexicase_increased_generations"
+	dir="default"
+#	dir="default_epsilon_lexicase_increased_generations"
 else
 	dir="default_epsilon_lexicase_increased_population"	
 fi	
