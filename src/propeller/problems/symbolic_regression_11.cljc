@@ -174,7 +174,7 @@
                                 :error-function_2         nil
                                 :training-data            (:train train-and-test-data)
                                 :testing-data             (:test train-and-test-data)
-                                :max-generations          500
+                                :max-generations          2500
                                 :population-size          500
                                 :max-initial-plushy-size  100
                                 :solution-error-threshold 0.1
@@ -211,7 +211,7 @@
                                 :training-data            (:train train-and-test-data)
                                 :testing-data             (:test train-and-test-data)
                                 :max-generations          500
-                                :population-size          500
+                                :population-size          2500
                                 :max-initial-plushy-size  100
                                 :solution-error-threshold 0.1
                                 :step-limit               200
