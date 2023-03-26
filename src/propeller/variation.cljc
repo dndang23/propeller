@@ -179,7 +179,7 @@
 ;          true
 ;          false)))))
 
-(defn adjusted-plushy-prob-mutation
+(defn perturbation-biased-mutation
   [plushy-hash-table]
   (let [plushy (:plushy plushy-hash-table)
         min-program-boolean-plushy (:min-program-boolean-plushy plushy-hash-table)]
@@ -238,6 +238,13 @@
                        (/ 1 (+ 1 (/ 1 umad-rate)))))
             plushy)))
 
+(defn delete-by-prob
+  "Deletes instructions whose associated probability is less than the specified limit."
+  [plushy limit]
+  (remove (fn [x] (< (last x)
+                     limit))
+          plushy))
+
 (defn diploid-uniform-deletion
   "Randomly deletes instructions from plushy at some rate."
   [plushy umad-rate]
@@ -288,14 +295,15 @@
        (-> (:plushy (selection/select-parent pop argmap))
            (prob-uniform-addition (:instructions argmap) (:umad-rate argmap))
            (uniform-deletion (:umad-rate argmap)))
+           ;(delete-by-prob 0.001))
        ;
        :mutation-prob
        (-> (:plushy (selection/select-parent pop argmap))
            (prob-mutation))
        ;
-       :adjusted-plushy-mutation-prob
+       :perturbation-biased-mutation
        (-> (selection/select-parent pop argmap)
-           (adjusted-plushy-prob-mutation))
+           (perturbation-biased-mutation))
        ;
        :rumad
        (let [parent-genome (:plushy (selection/select-parent pop argmap))

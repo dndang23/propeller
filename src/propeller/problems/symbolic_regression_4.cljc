@@ -93,7 +93,7 @@
 
 (defn multiple-evaluation-function
   [argmap data individual]
-  (loop [i 0 limit 10 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() min-program-boolean-plushy '()]
+  (loop [i 0 limit 20 min_behaviors_list '() min_error_list '() min_total_error 2147483647 min_program '() min-program-boolean-plushy '()]
     (if (= i limit)
       (assoc individual
         :behaviors min_behaviors_list
@@ -140,7 +140,7 @@
                               :training-data            (:train train-and-test-data)
                               :testing-data             (:test train-and-test-data)
                               :max-generations          500
-                              :population-size          500
+                              :population-size          250
                               :max-initial-plushy-size  100
                               :solution-error-threshold 0.1
                               :step-limit               200
@@ -149,7 +149,7 @@
                               :tournament-size          5
                               :umad-rate                0.1
                               ;:variation                {:umad 0.5 :crossover 0.5}
-                              :variation                {:umad-prob 0.05 :adjusted-plushy-mutation-prob 0.95}
+                              :variation                {:umad-prob 0.05 :perturbation-biased-mutation 0.95}
                               ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
                               :elitism                  false
                               :isDefault                false}
@@ -175,7 +175,7 @@
                                 :error-function_2         nil
                                 :training-data            (:train train-and-test-data)
                                 :testing-data             (:test train-and-test-data)
-                                :max-generations          2500
+                                :max-generations          5000
                                 :population-size          500
                                 :max-initial-plushy-size  100
                                 :solution-error-threshold 0.1
@@ -212,7 +212,7 @@
                                 :training-data            (:train train-and-test-data)
                                 :testing-data             (:test train-and-test-data)
                                 :max-generations          500
-                                :population-size          2500
+                                :population-size          5000
                                 :max-initial-plushy-size  100
                                 :solution-error-threshold 0.1
                                 :step-limit               200
