@@ -304,8 +304,8 @@
        :umad-prob
        (-> (:plushy (selection/select-parent pop argmap))
            (prob-uniform-addition (:instructions argmap) (:umad-rate argmap))
-           (uniform-deletion (:umad-rate argmap));)
-           (delete-by-prob 0.001))
+           (uniform-deletion (:umad-rate argmap)))
+           ;(delete-by-prob 0.001))
        ;
        :mutation-prob
        (-> (:plushy (selection/select-parent pop argmap))
@@ -313,7 +313,8 @@
        ;
        :perturbation-biased-mutation
        (-> (selection/select-parent pop argmap)
-           (perturbation-biased-mutation))
+           (perturbation-biased-mutation)
+           (delete-by-prob 0.001))
        ;
        :rumad
        (let [parent-genome (:plushy (selection/select-parent pop argmap))
