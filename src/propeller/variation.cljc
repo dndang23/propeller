@@ -158,11 +158,21 @@
         1
         val_2))))
 
+(defn perturb-with-positive-gaussian-noise
+  "Returns n perturbed with std dev sd."
+  [sd n]
+  (let [val (+' n (*' sd (gaussian-noise-factor)) sd)]
+    (if (> val 1)
+      1
+      (if (< val 0)
+        0
+        val))))
+
 ;mutates the probabilities of plushy
 (defn prob-mutation
   [plushy]
   (map #(if (< (rand) 1)
-          [(first %) (perturb-with-gaussian-noise 0.01 (last %))]
+          [(first %) (perturb-with-positive-gaussian-noise 0.2 (last %))]
           %)
        plushy))
 
@@ -294,8 +304,8 @@
        :umad-prob
        (-> (:plushy (selection/select-parent pop argmap))
            (prob-uniform-addition (:instructions argmap) (:umad-rate argmap))
-           (uniform-deletion (:umad-rate argmap)))
-           ;(delete-by-prob 0.001))
+           (uniform-deletion (:umad-rate argmap));)
+           (delete-by-prob 0.001))
        ;
        :mutation-prob
        (-> (:plushy (selection/select-parent pop argmap))
