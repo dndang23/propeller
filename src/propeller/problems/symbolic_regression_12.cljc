@@ -147,7 +147,8 @@
                               :tournament-size          5
                               :umad-rate                0.1
                               ;:variation                {:umad 0.5 :crossover 0.5}
-                              :variation                {:umad-prob 0.05 :perturbation-biased-mutation 0.95}
+                              ;:variation                {:umad-prob 0.05 :perturbation-biased-mutation 0.95}
+                              :variation                {:umad-prob 0.05 :mutation-prob 0.95}
                               ;:variation                {:umad-prob 0.30 :adjusted-plushy-mutation-prob 0.70 :crossover 0.0}
                               :elitism                  false
                               :isDefault                false}
