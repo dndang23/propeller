@@ -313,8 +313,8 @@
        ;
        :perturbation-biased-mutation
        (-> (selection/select-parent pop argmap)
-           (perturbation-biased-mutation)
-           (delete-by-prob 0.001))
+           (perturbation-biased-mutation))
+           ;(delete-by-prob 0.001))
        ;
        :rumad
        (let [parent-genome (:plushy (selection/select-parent pop argmap))
