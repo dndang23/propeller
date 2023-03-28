@@ -7,6 +7,6 @@ for (( i=${num_1}; i<=${num_2}; i++ ))
 do
 
 	cd symbolic_regression_${i}
-	bash change_date.sh ${i} 1 100 2023-03-25-22 2023-03-27-05
+	bash change_date.sh ${i} 1 100 2023-03-27-05 2023-03-27-16
 	cd ..
 done
