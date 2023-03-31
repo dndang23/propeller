@@ -137,25 +137,15 @@
 ;      temp
 ;      (recur (gaussian-noise-factor)))))
 
-(defn perturb-with-positive-gaussian-noise
-  "Returns n perturbed with std dev sd."
-  [sd n]
-  (let [val (+ n (* sd (gaussian-noise-factor)) sd)]
-    (if (> val 1)
-      1
-      (if (< val 0)
-        0
-        val))))
-
 (defn perturb-with-negative-gaussian-noise
   "Returns n perturbed with std dev sd."
   [sd n]
   (let [val (+ n (* sd (gaussian-noise-factor)))
         val_2 (- val sd)]
     (if (< val_2 0)
-      0
+      0.0
       (if (> val_2 1)
-        1
+        1.0
         val_2))))
 
 (defn perturb-with-positive-gaussian-noise
@@ -163,9 +153,9 @@
   [sd n]
   (let [val (+' n (*' sd (gaussian-noise-factor)) sd)]
     (if (> val 1)
-      1
+      1.0
       (if (< val 0)
-        0
+        0.0
         val))))
 
 ;mutates the probabilities of plushy

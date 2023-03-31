@@ -18,9 +18,17 @@ elif [ "${dir}" == "d_g" ]; then
 	dir="default_epsilon_lexicase_increased_generations"
 else
 	dir="default_epsilon_lexicase_increased_population"	
-fi	
+fi
 
-echo "Plushy (epsilon-lexicase selection) output"
+if [ "${dir}" == "95"  ]; then
+	dir="prob_05_95"
+elif [ "${dir}" == "80" ]; then
+	dir="prob_20_80"
+else
+	dir="prob_30_70"
+fi
+
+echo "Output"
 #for i in {5..5}
 #do
 counter=0
@@ -33,7 +41,7 @@ do
 		#sleep 1
 		#last_lines=`tail -15 /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${1}/default_epsilon_lexicase/${j}/out`
 		#echo ${last_lines}
-		gen_num=`cat /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/${dir}/${j}/out | grep average_num_generations`
+		gen_num=`cat /home/dndang23/Desktop/second_propeller/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/${dir}/${j}/out | grep average_num_generations`
 		if [ -z "${gen_num}" ]
 		then
 			echo "symbolic_regression_${i}, test ${j} is not finished"
@@ -43,7 +51,7 @@ do
 			if [[ "${gen_num}" != *"-1"* ]]; then
 				echo "symbolic_regression_${i}, test ${j}"
 				echo ${gen_num}
-				test_error_num=`cat /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/${dir}/${j}/out | grep total-test-error`
+				test_error_num=`cat /home/dndang23/Desktop/second_propeller/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/${dir}/${j}/out | grep total-test-error`
 				echo ${test_error_num}
 				
 				((counter=counter+1))

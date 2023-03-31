@@ -12,11 +12,19 @@ else
 	dir="default_epsilon_lexicase_increased_population"
 fi
 
+if [ "${dir}" == "95"  ]; then
+	dir="prob_05_95"
+elif [ "${dir}" == "80" ]; then
+	dir="prob_20_80"
+else
+	dir="prob_30_70"
+fi
+
 for (( i=$num; i<=$num; i++ ))
 do
 	for (( j=1; j<=100; j++ ))
 	do
-	  cat /home/dndang23/Desktop/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/${dir}/${j}/err
+	  cat /home/dndang23/Desktop/second_propeller/propeller_dir/propeller/src/propeller/results/${date}/symbolic_regression_${i}/${dir}/${j}/err
 	done
 done
 
